@@ -20,8 +20,8 @@
       <button class="preview__reset"><i class="far fa-trash-alt"></i>reset
       </button>
       <article class="preview__display">
-        <h3 class="preview__display--title"></h3>
-        <h3 class="preview__display--subtitle"></h3>
+        <h3 class="preview__display--title">nombre apellidos</h3>
+        <h3 class="preview__display--subtitle">profesion</h3>
         <div class="preview__display--img"></div>
         <footer class="preview__display--footer menu">
           <ul class="menu__links">
@@ -42,28 +42,61 @@
           diseña
           <i class="fas fa-angle-down">
           </i>
+
+          <h3>colors</h3>
           <div>
-            <h3>colors</h3>
-            <label for="color1">
-              <div class="colors__palets--green">
-                <input id="color1" type="radio" value="color1" name="color1" />
+
+            <label for="colors">
+              <input id="color1" type="radio" value="color1" name="color1" />
+              <div class="colors__container">
+                <div class="colors__container--green"></div>
+                <div class="colors__container--red"></div>
+                <div class="colors__container--yellow"></div>
+              </div>
             </label>
-            <label for="color2">
-              <div class="colors__palets--red">
-                <input id="color1" type="radio" value="color1" name="color1" />
+            <label for="colors">
+              <input id="color2" type="radio" value="color2" name="color2" />
+              <div class="colors__container">
+                <div class="colors__container--green"></div>
+                <div class="colors__container--red"></div>
+                <div class="colors__container--yellow"></div>
+              </div>
             </label>
-            <label for="color3">
-              <div class="colors__palets--yellow">
-                <input id="color1" type="radio" value="color1" name="color1" />
+            <label for="colors">
+              <input id="color3" type="radio" value="color3" name="color3" />
+              <div class="colors__container">
+                <div class="colors__container--green"></div>
+                <div class="colors__container--red"></div>
+                <div class="colors__container--yellow"></div>
+              </div>
             </label>
           </div>
+
         </li>
 
         <li class="input__fill">
           <i class="far fa-keyboard"></i>rellena<i class="fas fa-angle-down"></i></i>
+          <fieldset>
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" placeholder="Ej: Sally Jill" />
+            <label for="surnames">Puesto</label>
+            <input type="text" id="surnames" name="surnames" placeholder="Ej: Front-end unicorn" />
+            <label for="image">Imagen de perfil</label>
+            <button class="addImage">Añadir imagen</button>
+            <input type="button" id="image" name="image" />
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Ej: sally-hill@gmail.com" />
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55" />
+            <label for="linkedin">Linkedin</label>
+            <input type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill" />
+            <label for="github">Github</label>
+            <input type="text" id="github" name="github" placeholder="Ej: @sally-hill" />
+          </fieldset>
         </li>
         <li iclass="input__share">
           <i class="fas fa-share-alt"></i>comparte<i class="fas fa-angle-down"></i></i>
+          <button class="addImage"><i class="far fa-address-card"></i>crear tarjeta</button>
         </li>
       </ul>
     </section>
