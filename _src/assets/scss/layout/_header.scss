@@ -1,2 +1,12 @@
-@import "../core/variables.scss";
-@import "../core/mixins.scss";
+.header {
+  position: relative;
+  height: 111px;
+}
+
+.header__logo {
+  position: absolute;
+  width: 62.5%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
