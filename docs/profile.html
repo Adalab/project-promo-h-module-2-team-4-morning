@@ -4,6 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://kit.fontawesome.com/61294e7035.js" crossorigin="anonymous"></script>
         <title>Project module 2 Card web page 2</title>
         <!-- FAVICON PARA CUANDO LO TENGAMOS
         <link rel="icon" href="./favicon.png" />-->
@@ -15,7 +16,39 @@
     <body>
         <header class="header">Soy un header bonito</header>
         <main>
-            <p>Aquí van cosas guays</p>
+            <section class="preview">
+                <button class="preview__reset"><i class="far fa-trash-alt"></i>reset</button>
+                <article class="preview__display">
+                     <h3 class="preview__display--title"></h3>
+
+                     <h3 class="preview__display--subtitle"></h3>
+
+                    <div class="preview__display--img"></div>
+                    <footer class="preview__display--footer menu">
+                        <ul class="menu__links">
+                            <li class="menu__links--phone"><i class="fas fa-mobile-alt"></i>
+                            </li>
+                            <li class="menu__links--email"><i class="far fa-envelope"></i>
+                            </li>
+                            <li class="menu__links--linkedin"><i class="fab fa-linkedin-in"></i>
+                            </li>
+                            <li class="menu__links--github"><i class="fab fa-github-alt"></i>
+                            </li>
+                        </ul>
+                    </footer>
+                </article>
+            </section>
+            <section class="input">
+                <ul>
+                    <li class="input__design"> <i class="far fa-object-ungroup"></i>diseña<i class="fas fa-angle-down"></i>
+
+                    </li>
+                    <li class="input__fill"> <i class="far fa-keyboard"></i>rellena<i class="fas fa-angle-down"></i></i>
+                    </li>
+                    <li iclass="input__share"> <i class="fas fa-share-alt"></i>comparte<i class="fas fa-angle-down"></i></i>
+                    </li>
+                </ul>
+            </section>
         </main>
         <footer class="footer">
             <p>Holaa soy el footer</p>
