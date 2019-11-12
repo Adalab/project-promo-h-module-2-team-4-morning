@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script
-      src="https://kit.fontawesome.com/61294e7035.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Project module 2 Card web page 2</title>
-    <!-- FAVICON PARA CUANDO LO TENGAMOS <link rel="icon" href="./favicon.png" /> -->
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./assets/css/pages/profile.css"
-    />
-    <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
-  </head>
-  <body>
-    <partial src="_header.html"></partial>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://kit.fontawesome.com/61294e7035.js" crossorigin="anonymous"></script>
+  <title>Project module 2 Card web page 2</title>
+  <!-- FAVICON PARA CUANDO LO TENGAMOS <link rel="icon" href="./favicon.png" /> -->
 
-    <main>
-      <section class="preview">
-        <button class="preview__reset"><i class="far fa-trash-alt"></i>reset
-        </button>
-        <article class="preview__display">
-          <h3 class="preview__display--title"></h3>
-          <h3 class="preview__display--subtitle"></h3>
-          <div class="preview__display--img"></div>
-          <footer class="preview__display--footer menu">
-            <ul class="menu__links">
-              <li class="menu__links--phone"><i class="fas fa-mobile-alt"></i></li>
-              <li class="menu__links--email"><i class="far fa-envelope"></i></li>
-              <li class="menu__links--linkedin"><i class="fab fa-linkedin-in"></i></li>
-              <li class="menu__links--github"><i class="fab fa-github-alt"></i></li>
-            </ul>
-          </footer>
-        </article>
-      </section>
-      <section class="input">
-        <ul>
-          <li class="input__design">
-            <i class="far fa-object-ungroup"></i>diseña<i class="fas fa-angle-down"></i>
-            
-          </li>
-          <li class="input__fill">
-            <i class="far fa-keyboard"></i>rellena<i class="fas fa-angle-down"></i></i>
-          </li>
-          <li iclass="input__share">
-            <i class="fas fa-share-alt"></i>comparte<i class="fas fa-angle-down"></i></i>
-          </li>
-        </ul>
-      </section>
-    </main>
+  <link rel="stylesheet" type="text/css" href="./assets/css/pages/profile.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
+</head>
 
-    <partial src="_footer.html"></partial>
-  </body>
+<body>
+  <partial src="_header.html"></partial>
+
+  <main>
+    <section class="preview">
+      <button class="preview__reset"><i class="far fa-trash-alt"></i>reset
+      </button>
+      <article class="preview__display">
+        <h3 class="preview__display--title"></h3>
+        <h3 class="preview__display--subtitle"></h3>
+        <div class="preview__display--img"></div>
+        <footer class="preview__display--footer menu">
+          <ul class="menu__links">
+            <li class="menu__links--phone"><i class="fas fa-mobile-alt"></i></li>
+            <li class="menu__links--email"><i class="far fa-envelope"></i></li>
+            <li class="menu__links--linkedin"><i class="fab fa-linkedin-in"></i></li>
+            <li class="menu__links--github"><i class="fab fa-github-alt"></i></li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <section class="input">
+      <ul>
+        <li class="input__design">
+          <i class="far fa-object-ungroup">
+          </i>
+
+          diseña
+          <i class="fas fa-angle-down">
+          </i>
+          <div>
+            <h3>colors</h3>
+            <label for="color1">
+              <div class="colors__palets--green">
+                <input id="color1" type="radio" value="color1" name="color1" />
+            </label>
+            <label for="color2">
+              <div class="colors__palets--red">
+                <input id="color1" type="radio" value="color1" name="color1" />
+            </label>
+            <label for="color3">
+              <div class="colors__palets--yellow">
+                <input id="color1" type="radio" value="color1" name="color1" />
+            </label>
+          </div>
+        </li>
+
+        <li class="input__fill">
+          <i class="far fa-keyboard"></i>rellena<i class="fas fa-angle-down"></i></i>
+        </li>
+        <li iclass="input__share">
+          <i class="fas fa-share-alt"></i>comparte<i class="fas fa-angle-down"></i></i>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <partial src="_footer.html"></partial>
+</body>
+
 </html>

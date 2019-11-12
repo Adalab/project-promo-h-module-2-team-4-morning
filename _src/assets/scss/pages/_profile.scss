@@ -1,2 +1,26 @@
 @import "core/variables";
 @import "core/mixins";
+
+.preview {
+  background-color: #bfcdd0;
+  &__display--img {
+    border: #000000 2px solid;
+    width: 240px;
+    height: 200px;
+  }
+}
+.colors__palets--green {
+  background-color: green;
+  width: 30px;
+  height: 25px;
+}
+.colors__palets--red {
+  background-color: red;
+  width: 30px;
+  height: 25px;
+}
+.colors__palets--yellow {
+  background-color: yellow;
+  width: 30px;
+  height: 25px;
+}
