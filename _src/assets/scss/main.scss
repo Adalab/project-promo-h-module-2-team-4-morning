@@ -1,17 +1,14 @@
-// variables // 
+// core //
 @import "core/variables";
-
-// mixins //
 @import "core/mixins";
-
-// normalize //
 @import "core/normalize";
 
-// header //
+// layout //
 @import "layout/header";
-
-// footer //
 @import "layout/footer";
 
-// profile //
+// components // 
+@import "components/buttons";
+
+// pages //
 @import "pages/profile";
