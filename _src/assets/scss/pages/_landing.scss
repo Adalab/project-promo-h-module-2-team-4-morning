@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  background-color: #f5f5f5;
+  background-color: $background-landing;
   padding: 95px 25px 30px 25px;
 
   &__image {
@@ -18,11 +18,9 @@
 
   &__title {
     font-size: 19.4px;
-    // METER FONT EN VARIABLE
-    font-family: "Merriweather";
+    font-family: $font-titleLanding;
     font-weight: 900;
-    // METER COLOR EN VARIABLES
-    color: #e17334;
+    color: $color-secondary;
   }
 
   &__text {
@@ -30,26 +28,26 @@
     text-align: center;
     padding-bottom: 17.8px;
     font-size: 12.8px;
-    color: #114e4e;
-    // meter FONT FAMILY EN VARABLES
-    font-family: "OpenSans";
+    color: $color-tertiary;
+    font-family: $font-principal;
   }
 
   &__menu {
     max-width: 268px;
-    border: rgba(225, 115, 52, 0.745) solid 1.6px;
+    //METER EN VARIABLES
+    border: $border-menu solid 1.6px;
     border-radius: 4px;
     margin-bottom: 38.6px;
   }
   &__button {
-    background: #438792;
+    background: $background-button;
     height: 42px;
     width: 129px;
     border-radius: 21px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: OpenSans;
+    font-family: $font-principal;
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
@@ -75,14 +73,14 @@
     &--fav {
       width: 32px;
       font-size: 22.4px;
-      color: #e17334;
+      color: $color-secondary;
     }
 
     &--text {
       width: 50px;
       font-size: 12.8px;
-      font-family: OpenSans;
-      color: #54585a;
+      font-family: $font-principal;
+      color: $color-primary;
     }
   }
 }
@@ -109,7 +107,7 @@
 
     &__menu {
       max-width: 325px;
-      border: rgba(225, 115, 52, 0.745) solid 2px;
+      border: $border-menu solid 2px;
       border-radius: 5px;
       margin-bottom: 186px;
     }

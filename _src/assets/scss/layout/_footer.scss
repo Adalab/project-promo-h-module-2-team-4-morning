@@ -2,5 +2,39 @@
 @import "../core/mixins.scss";
 
 .footer {
-  background: green;
+  background-color: $background-footer;
+  border-top: solid $border-footer 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 18px 0 20px 0;
+  &__paragraph {
+    color: $color-quaternary;
+    opacity: 0.5;
+    font-family: $font-principal;
+    font-size: 14px;
+  }
+  &__logo {
+    width: 103px;
+    height: 40px;
+    padding-top: 12px;
+  }
+}
+
+@media all and (min-width: 678px) {
+  .footer {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 40px;
+
+    //ESTO DEBERÍA IR EN NORMALIZE
+    box-sizing: border-box;
+    &__logo {
+      padding-top: 0;
+    }
+  }
 }
