@@ -1,3 +1,29 @@
-.input__design--title {
+.input__design {
+  color: #54585a;
   text-transform: uppercase;
+  font-family: 'Open Sans';
+
+  &--title {
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+
+  &--colors {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
+
+.design-flex {
+  display: flex;
+  flex-direction: row;
+
 }
