@@ -2,18 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  //justify-content: flex-end;
   background-color: $background-landing;
-  padding: 95px 25px 30px 25px;
-  height: 85vh;
+  padding-top: 95px;
+  //height: 85vh;
 
   &__image {
+    width: 250px;
     height: 63px;
     margin-bottom: 35.4px;
   }
 
   &__title {
-    font-size: 19.4px;
+    font-size: 19.2px;
     font-family: $font-titleLanding;
     font-weight: 900;
     color: $color-secondary;
@@ -24,18 +25,20 @@
     text-align: center;
     margin-bottom: 17.8px;
     font-size: 12.8px;
+    font-weight: normal;
     color: $color-tertiary;
     font-family: $font-principal;
   }
 
   &__menu {
-    min-width: 270px;
+    min-width: 268px;
     border: $border-menu solid 1.6px;
     border-radius: 4px;
-    margin-bottom: 38.6px;
+    margin-bottom: 38.6px;    
   }
 
   &__button {
+    margin-bottom: 30px;
     background: $background-button;
     height: 42px;
     width: 129px;
@@ -61,7 +64,7 @@
   }
 
   &__item {
-    padding: 20px;
+    padding: 15px 0 10px;
     max-width: 60px;
     display: flex;
     flex-direction: column;
@@ -81,6 +84,7 @@
       font-size: 12.8px;
       font-family: $font-principal;
       color: $color-primary;
+      font-weight: normal;
       text-align: center;
 
     }
