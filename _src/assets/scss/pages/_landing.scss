@@ -1,0 +1,130 @@
+* {
+  margin: 0px;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: $background-landing;
+  padding: 95px 25px 30px 25px;
+
+  &__image {
+    width: 250px;
+    height: 63px;
+    padding-bottom: 35.4px;
+  }
+
+  &__title {
+    font-size: 19.4px;
+    font-family: $font-titleLanding;
+    font-weight: 900;
+    color: $color-secondary;
+  }
+
+  &__text {
+    max-width: 264px;
+    text-align: center;
+    padding-bottom: 17.8px;
+    font-size: 12.8px;
+    color: $color-tertiary;
+    font-family: $font-principal;
+  }
+
+  &__menu {
+    max-width: 268px;
+    //METER EN VARIABLES
+    border: $border-menu solid 1.6px;
+    border-radius: 4px;
+    margin-bottom: 38.6px;
+  }
+  &__button {
+    background: $background-button;
+    height: 42px;
+    width: 129px;
+    border-radius: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-principal;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration-line: none;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // VER NORMALIZE PARA QUE NO HAYA QUE METER PADDING 0
+    padding: 0px;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 20px;
+    max-width: 60px;
+    text-align: center;
+
+    &--fav {
+      width: 32px;
+      font-size: 22.4px;
+      color: $color-secondary;
+    }
+
+    &--text {
+      width: 50px;
+      font-size: 12.8px;
+      font-family: $font-principal;
+      color: $color-primary;
+    }
+  }
+}
+
+@media all and (min-width: 678px) {
+  .landing {
+    padding: 340px 175px 59px 175px;
+
+    &__image {
+      width: 419px;
+      height: 105px;
+      padding-bottom: 31px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__text {
+      max-width: 331px;
+      padding-bottom: 27px;
+      font-size: 16px;
+    }
+
+    &__menu {
+      max-width: 325px;
+      border: $border-menu solid 2px;
+      border-radius: 5px;
+      margin-bottom: 186px;
+    }
+  }
+
+  .menu {
+    &__item {
+      max-width: 75px;
+
+      &--fav {
+        font-size: 28px;
+      }
+
+      &--text {
+        width: 55px;
+        font-size: 16px;
+      }
+    }
+  }
+}
