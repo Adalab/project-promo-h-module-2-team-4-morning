@@ -4,6 +4,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat:400,700,800|Open+Sans:400,700&display=swap"
+        rel="stylesheet">
         <script src="https://kit.fontawesome.com/61294e7035.js" crossorigin="anonymous"></script>
         <title>Project module 2 Card web page 2</title>
         <!-- FAVICON PARA CUANDO LO TENGAMOS
@@ -15,26 +17,43 @@
     
     <body>
         <header class="header">
-            <img src="../assets/images/logoheader.svg" alt="" />
+            <img class="header__logo" src="./assets/images/logoheader.svg" alt=""
+            />
         </header>
         <main>
             <section class="preview">
-                <button class="preview__reset"><i class="far fa-trash-alt"></i>reset</button>
+                <button class="preview__reset"><i class="far fa-trash-alt preview__icon"></i>reset</button>
                 <article class="preview__display">
-                     <h3 class="preview__display--title"></h3>
+                    <header class="preview__display--header">
+                        <div>
+                             <h3 class="preview__display--title">nombre apellidos</h3>
 
-                     <h3 class="preview__display--subtitle"></h3>
+                             <h3 class="preview__display--subtitle">profesion</h3>
 
+                        </div>
+                    </header>
                     <div class="preview__display--img"></div>
                     <footer class="preview__display--footer menu">
-                        <ul class="menu__links">
-                            <li class="menu__links--phone"><i class="fas fa-mobile-alt"></i>
+                        <ul class="menu__list">
+                            <li class="menu__items menu__items--phone"> <a class="menu__links" href="#">
+                        <i class="fas fa-mobile-alt"></i>
+                    </a>
+
                             </li>
-                            <li class="menu__links--email"><i class="far fa-envelope"></i>
+                            <li class="menu__items menu__item--email"> <a class="menu__links" href="#">
+                        <i class="far fa-envelope"></i>
+                    </a>
+
                             </li>
-                            <li class="menu__links--linkedin"><i class="fab fa-linkedin-in"></i>
+                            <li class="menu__items menu__items--linkedin"> <a class="menu__links" href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
                             </li>
-                            <li class="menu__links--github"><i class="fab fa-github-alt"></i>
+                            <li class="menu__items menu__items--github"> <a class="menu__links" href="#">
+                        <i class="fab fa-github-alt"></i>
+                    </a>
+
                             </li>
                         </ul>
                     </footer>
@@ -42,18 +61,76 @@
             </section>
             <section class="input">
                 <ul>
-                    <li class="input__design"> <i class="far fa-object-ungroup"></i>diseña<i class="fas fa-angle-down"></i>
+                    <li class="input__design"> <i class="far fa-object-ungroup">
+    </i>
+diseña <i class="fas fa-angle-down">
+    </i>
 
+                         <h3>colors</h3>
+
+                        <div>
+                            <label for="colors">
+                                <input id="color1" type="radio" value="color1" name="color1" />
+                                <div class="colors__container">
+                                    <div class="colors__container--green"></div>
+                                    <div class="colors__container--red"></div>
+                                    <div class="colors__container--yellow"></div>
+                                </div>
+                            </label>
+                            <label for="colors">
+                                <input id="color2" type="radio" value="color2" name="color2" />
+                                <div class="colors__container">
+                                    <div class="colors__container--green"></div>
+                                    <div class="colors__container--red"></div>
+                                    <div class="colors__container--yellow"></div>
+                                </div>
+                            </label>
+                            <label for="colors">
+                                <input id="color3" type="radio" value="color3" name="color3" />
+                                <div class="colors__container">
+                                    <div class="colors__container--green"></div>
+                                    <div class="colors__container--red"></div>
+                                    <div class="colors__container--yellow"></div>
+                                </div>
+                            </label>
+                        </div>
                     </li>
                     <li class="input__fill"> <i class="far fa-keyboard"></i>rellena<i class="fas fa-angle-down"></i></i>
+                        <fieldset>
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" name="name" placeholder="Ej: Sally Jill"
+                            />
+                            <label for="surnames">Puesto</label>
+                            <input type="text" id="surnames" name="surnames" placeholder="Ej: Front-end unicorn"
+                            />
+                            <label for="image">Imagen de perfil</label>
+                            <button class="addImage">Añadir imagen</button>
+                            <input type="button" id="image" name="image" />
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Ej: sally-hill@gmail.com"
+                            />
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55"
+                            />
+                            <label for="linkedin">Linkedin</label>
+                            <input type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill"
+                            />
+                            <label for="github">Github</label>
+                            <input type="text" id="github" name="github" placeholder="Ej: @sally-hill"
+                            />
+                        </fieldset>
                     </li>
                     <li iclass="input__share"> <i class="fas fa-share-alt"></i>comparte<i class="fas fa-angle-down"></i></i>
+                        <button
+                        class="addImage"><i class="far fa-address-card"></i>crear tarjeta</button>
                     </li>
                 </ul>
             </section>
         </main>
         <footer class="footer">
-            <p>Holaa soy el footer</p>
+            <p class="footer__paragraph">Awesome profile-cards @2019</p>
+            <img class="footer__logo" src="./assets/images/logo-adalab.png"
+            alt="logo" title="logo adalab" />
         </footer>
     </body>
 
