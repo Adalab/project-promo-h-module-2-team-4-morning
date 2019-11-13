@@ -61,64 +61,82 @@
             </section>
             <section class="input">
                 <ul>
-                    <li class="input__design"> <i class="far fa-object-ungroup">
-    </i>
-diseña <i class="fas fa-angle-down">
-    </i>
+                    <li class="input__design">
+                        <div class="design-box">
+                            <div class="design-box__header"> <i class="far fa-object-ungroup design-box__icon" style="color:#e17334;"></i>
 
-                         <h3>colors</h3>
+                                <h2
+                                class="design-box__heading">diseña</h2>
+                                    <button class="design-box__toggle-btn"> <i class="fas fa-angle-down"> </i>
 
-                        <div>
-                            <label for="colors">
-                                <input id="color1" type="radio" value="color1" name="color1" />
-                                <div class="colors__container">
-                                    <div class="colors__container--green"></div>
-                                    <div class="colors__container--red"></div>
-                                    <div class="colors__container--yellow"></div>
+                                    </button>
+                            </div>
+                            <div class="design-box__body">
+                                 <h3 class="design-box__title">colores</h3>
+
+                                <div class="design-box__themes">
+                                    <div class="design-box__theme" for="color1">
+                                        <input id="color1" type="radio" value="color1" name="color-palette" />
+                                        <div class="colors__container">
+                                            <div class="colors colors--green1"></div>
+                                            <div class="colors colors--green2"></div>
+                                            <div class="colors colors--green3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="design-box__theme" for="color2">
+                                        <input id="color2" type="radio" value="color2" name="color-palette" />
+                                        <div class="colors__container">
+                                            <div class="colors colors--red1"></div>
+                                            <div class="colors colors--red2"></div>
+                                            <div class="colors colors--red3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="design-box__theme" for="color3">
+                                        <input id="color3" type="radio" value="color3" name="color-palette" />
+                                        <div class="colors__container">
+                                            <div class="colors colors--gray1"></div>
+                                            <div class="colors colors--gray2"></div>
+                                            <div class="colors colors--gray3"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </label>
-                            <label for="colors">
-                                <input id="color2" type="radio" value="color2" name="color2" />
-                                <div class="colors__container">
-                                    <div class="colors__container--green"></div>
-                                    <div class="colors__container--red"></div>
-                                    <div class="colors__container--yellow"></div>
-                                </div>
-                            </label>
-                            <label for="colors">
-                                <input id="color3" type="radio" value="color3" name="color3" />
-                                <div class="colors__container">
-                                    <div class="colors__container--green"></div>
-                                    <div class="colors__container--red"></div>
-                                    <div class="colors__container--yellow"></div>
-                                </div>
-                            </label>
+                            </div>
                         </div>
                     </li>
-                    <li class="input__fill"> <i class="far fa-keyboard"></i>rellena<i class="fas fa-angle-down"></i></i>
-                        <fieldset>
-                            <label for="name">Nombre completo</label>
-                            <input type="text" id="name" name="name" placeholder="Ej: Sally Jill"
-                            />
-                            <label for="surnames">Puesto</label>
-                            <input type="text" id="surnames" name="surnames" placeholder="Ej: Front-end unicorn"
-                            />
-                            <label for="image">Imagen de perfil</label>
-                            <button class="addImage">Añadir imagen</button>
-                            <input type="button" id="image" name="image" />
-                            <label for="email">Email</label>
-                            <input type="text" id="email" name="email" placeholder="Ej: sally-hill@gmail.com"
-                            />
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55"
-                            />
-                            <label for="linkedin">Linkedin</label>
-                            <input type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill"
-                            />
-                            <label for="github">Github</label>
-                            <input type="text" id="github" name="github" placeholder="Ej: @sally-hill"
-                            />
-                        </fieldset>
+                    <li class="fill">
+                        <div class="fill__collapsible">
+                            <div class="collapsible__left"> <i class="collapsible__left--fav far fa-keyboard"></i>
+
+                                 <h2 class="collapsible__left--title">Rellena</h2>
+
+                            </div> <i class="collapsible--arrow fas fa-angle-down"></i>
+
+                        </div>
+                        <form class="fill__form" action="#" method="post">
+                            <label class="form--lable" for="name">Nombre completo</label>
+                            <input class="form--box" type="text" id="name"
+                            name="name" placeholder="Ej: Sally Jill" />
+                            <label class="form--lable" for="surnames">Puesto</label>
+                            <input class="form--box" type="text" id="surnames" name="surnames"
+                            placeholder="Ej: Front-end unicorn" />
+                            <label class="form--lable" for="image">Imagen de perfil</label>
+                            <div class="form--image"> <a class="form--image--button">Añadir imagen</a>
+
+                                <div class="form--image--miniature"></div>
+                            </div>
+                            <label class="form--lable" for="email">Email</label>
+                            <input class="form--box" type="email" id="email" name="email"
+                            placeholder="Ej: sally-hill@gmail.com" />
+                            <label class="form--lable" for="phone">Teléfono</label>
+                            <input class="form--box" type="tel" id="phone" name="phone"
+                            placeholder="Ej: 555-55-55-55" />
+                            <label class="form--lable" for="linkedin">Linkedin</label>
+                            <input class="form--box" type="text" id="linkedin" name="linkedin"
+                            placeholder="Ej: linkedin.com/in/sally.hill" />
+                            <label class="form--lable" for="github">Github</label>
+                            <input class="form--box" type="text" id="github" name="github"
+                            placeholder="Ej: @sally-hill" />
+                        </form>
                     </li>
                     <li iclass="input__share"> <i class="fas fa-share-alt"></i>comparte<i class="fas fa-angle-down"></i></i>
                         <button
