@@ -1,18 +1,19 @@
 .preview__reset {
+  // limpiar todo lo que pone normal
   width: 75px;
   height: 30px;
   border-radius: 15px;
-  border: solid 1px #ffffff;
+  border: solid 1px $colorButton;
   background-color: transparent;
   text-transform: uppercase;
-  font-family: 'Open Sans';
+  font-family: $fontPrimary;
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
   letter-spacing: normal;
-  color: #54585a;
+  color: $colorSecondary;
   align-self: flex-start;
   margin-bottom: 20px;
 }

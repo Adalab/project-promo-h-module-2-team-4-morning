@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   padding: 38px 35px 40px 45px;
+
   @media all and (min-width: 768px) {
     order: 1;
     width: 50%;
@@ -17,19 +18,21 @@
 
   &__display {
     background-color: #fff;
-    font-family: "Montserrat";
+    font-family: $fontCard;
 
     &--header {
       padding: 20px 0 10px;
 
       div {
+        // FALTA CLASE OJO
         padding-left: 20px;
-        border-left: 5px solid #438792;
+        border-left: 5px solid $colorOption1-2;
       }
     }
 
     &--title {
       // quitar margin (reset) //
+      // QUITAR LOS NORMAL QUE VIENEN EN ZEPLIN PERO NO HACEN FALTA
       margin: 0;
       margin-bottom: 4px;
       font-size: 18px;
@@ -38,12 +41,15 @@
       font-style: normal;
       line-height: 1.11;
       letter-spacing: normal;
-      color: #114e4e;
+      color: $colorOption1-1;
       text-transform: capitalize;
     }
 
     &--subtitle {
       // quitar margin (reset) //
+      // IDEM A ARRIBA
+      // ojo mayus en html
+      // en zeplin la fuente parece diferente
       margin: 0;
       font-size: 16px;
       font-weight: normal;
@@ -51,12 +57,13 @@
       font-style: normal;
       line-height: 1.25;
       letter-spacing: normal;
-      color: #54585a;
+      color: $colorSecondary;
     }
   }
 }
 
 .preview__display--footer .menu__list {
+  // el row no hace falta :) 
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -65,17 +72,18 @@
 }
 
 .menu__items {
-  border: 2px solid #a2deaf;
+  border: 2px solid $colorOption1-3;
   border-radius: 50%;
   margin-left: 10px;
 }
 
 .menu__links {
+  // ver clases enveloppe --- no está aplicando el estilo centrado
   display: flex;
   width: 25px;
   align-items: center;
   justify-content: center;
   height: 25px;
-  color: #114e4e;
+  color: $colorOption1-1;
   text-decoration: none;
 }

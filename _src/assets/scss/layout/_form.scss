@@ -11,46 +11,21 @@
   }
 }
 
-.collapsible {
-  &__left {
-    display: flex;
-    align-items: center;
-
-    &--title {
-      font-size: 18px;
-      color: #54585a;
-      font-family: "Open Sans";
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-left: 10px;
-    }
-
-    &--fav {
-      color: #e17334;
-      font-size: 18px;
-    }
-  }
-
-  &--arrow {
-    font-size: 18px;
-    color: #54585a;
-  }
-}
 
 .form {
   &--lable {
-    color: #114e4e;
+    color: $colorTertiary;
     font-size: 14px;
-    font-family: "Open Sans";
+    font-family: $fontPrimary;
     margin-bottom: 7px;
   }
 
   &--box {
     height: 30px;
-    border: #a2deaf solid 1px;
+    border: $placeholderBorder solid 1px;
     font-size: 14px;
     line-height: 20px;
-    color: #c5c5c5;
+    color: $placeholderColor;
     padding-left: 9px;
     margin-bottom: 20px;
   }
@@ -62,11 +37,11 @@
     &--button {
       width: 140px;
       height: 30px;
-      background: #e17334;
+      background: $colorPrimary;
       border-radius: 3px;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-      color: white;
-      font-family: "Open Sans";
+      color: $colorButton;
+      font-family: $fontPrimary;
       font-size: 14px;
       line-height: 1.43;
       display: flex;
@@ -77,7 +52,7 @@
     &--miniature {
       height: 30px;
       width: 30px;
-      border: #a2deaf solid 1px;
+      border: $placeholderBorder solid 1px;
       margin-left: 20px;
     }
   }

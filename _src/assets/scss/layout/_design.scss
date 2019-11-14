@@ -1,10 +1,11 @@
 .design-box {
-  color: #54585a;
+  color: $colorSecondary;
   text-transform: uppercase;
-  font-family: "Open Sans";
+  font-family: $fontPrimary;
   display: flex;
 
   &__title {
+    // quitar font weight
     font-size: 14px;
     margin-left: 20px;
     flex-basis: 50%;
@@ -31,39 +32,39 @@
     height: 25px;
 
     &--green1 {
-      background-color: #114e4e;
+      background-color: $colorOption1-1;
     }
 
     &--green2 {
-      background-color: #438792;
+      background-color: $colorOption1-2;
     }
 
     &--green3 {
-      background-color: #a2deaf;
+      background-color: $colorOption1-3;
     }
 
     &--red1 {
-      background-color: #420101;
+      background-color: $colorOption2-1;
     }
 
     &--red2 {
-      background-color: #bd1010;
+      background-color: $colorOption2-2;
     }
 
     &--red3 {
-      background-color: #e95626;
+      background-color: $colorOption2-3;
     }
 
     &--gray1 {
-      background-color: #3e5b65;
+      background-color: $colorOption3-1;
     }
 
     &--gray2 {
-      background-color: #eab052;
+      background-color: $colorOption3-2;
     }
 
     &--gray3 {
-      background-color: #a0c0cf;
+      background-color: $colorOption3-3;
     }
   }
 }
