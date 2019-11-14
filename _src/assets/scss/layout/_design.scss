@@ -1,53 +1,14 @@
 .design-box {
   color: #54585a;
   text-transform: uppercase;
-  font-family: 'Open Sans';
-  padding: 20px;
-
-
-  &__header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 22px;
-  }
-
-  &__icon {
-    margin-right: 10px;
-  }
-
-  &--heading {
-    font-size: 18px;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-  }
-
-  &__toggle-btn {
-    margin-left: auto;
-    background-color: transparent;
-    border: none;
-
-    i {
-      font-size: 24px;
-    }
-  }
-
-  &__body {
-    display: flex;
-
-  }
+  font-family: "Open Sans";
+  display: flex;
 
   &__title {
     font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     margin-left: 20px;
     flex-basis: 50%;
+    font-weight: normal;
   }
 
   &__themes {
@@ -63,7 +24,6 @@
 
   .colors__container {
     display: flex;
-
   }
 
   .colors {
@@ -106,5 +66,4 @@
       background-color: #a0c0cf;
     }
   }
-
 }

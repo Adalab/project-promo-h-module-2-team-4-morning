@@ -1,0 +1,22 @@
+.share {
+  &__btn {
+    background-color: $color-secondary;
+    color: $background-footer;
+    text-transform: uppercase;
+    width: 199px;
+    height: 50px;
+    border-radius: 12px;
+    font-family: $font-principal;
+    font-size: 18px;
+    //font-weight: 600;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+  }
+}
+
+.far {
+  padding-right: 9px;
+}

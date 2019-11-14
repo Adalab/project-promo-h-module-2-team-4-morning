@@ -5,7 +5,7 @@
   justify-content: flex-end;
   background-color: $background-landing;
   padding-top: 95px;
-  height: 80vh;
+  height: 85vh;
 
   &__image {
     width: 250px;
@@ -31,13 +31,14 @@
   }
 
   &__menu {
-    min-width: 268px;
+    max-width: 268px;
     border: $border-menu solid 1.6px;
     border-radius: 4px;
     margin-bottom: 38.6px;    
   }
 
   &__button {
+    display: block;
     margin-bottom: 30px;
     background: $background-button;
     min-height: 42px;
@@ -64,8 +65,9 @@
   }
 
   &__item {
-    padding: 15px 0 10px;
-    max-width: 60px;
+    margin: 15px 0 10px;
+    max-width: 75px;
+    height: 61px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,12 +96,12 @@
 @media all and (min-width: 768px) {
   .landing {
     
-    padding: 340px 175px 59px 175px;
+    padding: 340px 0 59px 0;
     height: 100%;
 
     &__image {
       width:419px;
-      //height: 105px;
+      height: 105px;
       margin-bottom: 31px;
     }
 
@@ -109,12 +111,13 @@
 
     &__text {
       max-width: 331px;
-      padding-bottom: 27px;
+      margin-bottom: 27px;
       font-size: 16px;
     }
 
     &__menu {
-      max-width: 325px;
+      //max-width: 325px;
+      width: 325px;
       border: $border-menu solid 2px;
       border-radius: 5px;
       margin-bottom: 186px;
@@ -123,7 +126,9 @@
 
   .menu {
     &__item {
-      max-width: 75px;
+      //max-width: 75px;
+      width: 75px;
+      
 
       &--fav {
         font-size: 28px;
