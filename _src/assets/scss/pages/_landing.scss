@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //justify-content: flex-end;
+  justify-content: flex-end;
   background-color: $background-landing;
   padding-top: 95px;
-  //height: 85vh;
+  height: 80vh;
 
   &__image {
     width: 250px;
@@ -40,7 +40,7 @@
   &__button {
     margin-bottom: 30px;
     background: $background-button;
-    height: 42px;
+    min-height: 42px;
     width: 129px;
     border-radius: 21px;
     display: flex;
@@ -93,11 +93,13 @@
 
 @media all and (min-width: 768px) {
   .landing {
+    
     padding: 340px 175px 59px 175px;
     height: 100%;
 
     &__image {
-      height: 105px;
+      width:419px;
+      //height: 105px;
       margin-bottom: 31px;
     }
 
