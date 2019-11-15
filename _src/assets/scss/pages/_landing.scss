@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //justify-content: flex-end;
   background-color: $backgroundLanding;
+  //background-attachment: fixed;
   padding-top: 95px;
+  //height: 81vh;
+  height: auto;
 
   &__image {
     width: 250px;
@@ -64,7 +66,6 @@
   }
 
   &__item {
-    //margin: 15px 0 10px;
     margin-top:15px;
     max-width: 75px;
     height: 61px;
@@ -95,9 +96,7 @@
 
 @media all and (min-width: 768px) {
   .landing {
-    
     padding: 340px 0 59px 0;
-    height: 100%;
 
     &__image {
       width:419px;
@@ -107,6 +106,9 @@
 
     &__title {
       font-size: 24px;
+    }
+    &__button{
+      margin-bottom: 59px;
     }
 
     &__text {
@@ -129,7 +131,6 @@
       //max-width: 75px;
       width: 75px;
       
-
       &--fav {
         font-size: 28px;
       }

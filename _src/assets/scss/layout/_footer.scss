@@ -1,16 +1,11 @@
 .footer {
-  // background-color: $background-footer;
   border-top: solid $bottomBorder 1px;
   display: flex;
   flex-direction: column;
-  //flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   padding: 18px 0 20px 0;
-  //height: 10vh;
-  position: relative;
-
-
+  //height: 100%;
 
   &__paragraph {
     color: $colorQuaternary;
@@ -29,9 +24,8 @@
   .footer {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 40px;
-    height: 100%;
-
+    padding: 18px 40px 22px 41px;
+    //height: 100%;
 
     &__logo {
       padding-top: 0;
