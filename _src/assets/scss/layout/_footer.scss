@@ -3,10 +3,12 @@
   border-top: solid $bottomBorder 1px;
   display: flex;
   flex-direction: column;
+  //flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   padding: 18px 0 20px 0;
-  height: 85vh;
+  //height: 10vh;
+  position: relative;
 
 
 
