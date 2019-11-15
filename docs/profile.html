@@ -64,15 +64,16 @@
             </section>
             <section class="input">
                 <ul>
+                    <form action="#" method="post"></form>
                     <li class="input__design">
-                        <div class="fill__collapsible">
+                        <legend class="fill__collapsible">
                             <div class="collapsible__left"> <i class="collapsible__left--fav far fa-object-ungroup"></i>
 
                                  <h2 class="collapsible__left--title">Diseña</h2>
 
                             </div> <i class="collapsible--arrow fas fa-angle-down"></i>
 
-                        </div>
+                        </legend>
                         <div class="design-box">
                              <h3 class="design-box__title">Colores</h3>
 
@@ -105,21 +106,21 @@
                         </div>
                     </li>
                     <li class="fill">
-                        <div class="fill__collapsible">
+                        <legend class="fill__collapsible">
                             <div class="collapsible__left"> <i class="collapsible__left--fav far fa-keyboard"></i>
 
                                  <h2 class="collapsible__left--title">Rellena</h2>
 
                             </div> <i class="collapsible--arrow fas fa-angle-down"></i>
 
-                        </div>
-                        <form class="fill__form" action="#" method="post">
+                        </legend>
+                        <div class="fill__form">
                             <label class="form--lable" for="name">Nombre completo</label>
                             <input class="form--box" type="text" id="name"
-                            name="name" placeholder="Ej: Sally Jill" />
+                            name="name" placeholder="Ej: Sally Jill" required />
                             <label class="form--lable" for="surnames">Puesto</label>
                             <input class="form--box" type="text" id="surnames" name="surnames"
-                            placeholder="Ej: Front-end unicorn" />
+                            placeholder="Ej: Front-end unicorn" required />
                             <label class="form--lable" for="image">Imagen de perfil</label>
                             <div class="form--image"> <a class="form--image--button">Añadir imagen</a>
 
@@ -127,27 +128,28 @@
                             </div>
                             <label class="form--lable" for="email">Email</label>
                             <input class="form--box" type="email" id="email" name="email"
-                            placeholder="Ej: sally-hill@gmail.com" />
+                            placeholder="Ej: sally-hill@gmail.com" required />
                             <label class="form--lable" for="phone">Teléfono</label>
                             <input class="form--box" type="tel" id="phone" name="phone"
-                            placeholder="Ej: 555-55-55-55" />
+                            placeholder="Ej: 555-55-55-55" required />
                             <label class="form--lable" for="linkedin">Linkedin</label>
                             <input class="form--box" type="text" id="linkedin" name="linkedin"
-                            placeholder="Ej: linkedin.com/in/sally.hill" />
+                            placeholder="Ej: linkedin.com/in/sally.hill" required />
                             <label class="form--lable" for="github">Github</label>
                             <input class="form--box" type="text" id="github" name="github"
-                            placeholder="Ej: @sally-hill" />
-                        </form>
+                            placeholder="Ej: @sally-hill" required />
+                            </form>
+                        </div>
                     </li>
                     <li class="share">
-                        <div class="fill__collapsible">
+                        <legend class="fill__collapsible">
                             <div class="collapsible__left"> <i class="collapsible__left--fav fas fa-share-alt"></i>
 
                                  <h2 class="collapsible__left--title">Comparte</h2>
 
                             </div> <i class="collapsible--arrow fas fa-angle-down"></i>
 
-                        </div>
+                        </legend>
                         <button class="share__btn"><i class="far fa-address-card"></i>Crear tarjeta</button>
                     </li>
                 </ul>
