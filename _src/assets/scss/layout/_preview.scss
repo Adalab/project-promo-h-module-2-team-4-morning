@@ -4,10 +4,21 @@
   flex-direction: column;
   align-items: center;
   padding: 38px 35px 40px 45px;
+  position: relative;
 
   @media all and (min-width: 768px) {
     order: 1;
     width: 50%;
+    border-radius: 6px;
+    margin: 20px 40px 20px 0;
+  }
+
+  &__container {
+    @media all and (min-width: 768px) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &__display--img {
@@ -42,13 +53,11 @@
       line-height: 1.11;
       letter-spacing: normal;
       color: $colorOption1-1;
-      text-transform: capitalize;
     }
 
     &--subtitle {
       // quitar margin (reset) //
       // IDEM A ARRIBA
-      // ojo mayus en html
       // en zeplin la fuente parece diferente
       margin: 0;
       font-size: 16px;
@@ -63,7 +72,6 @@
 }
 
 .preview__display--footer .menu__list {
-  // el row no hace falta :) 
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -78,7 +86,6 @@
 }
 
 .menu__links {
-  // ver clases enveloppe --- no está aplicando el estilo centrado
   display: flex;
   width: 25px;
   align-items: center;
