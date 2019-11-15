@@ -1,6 +1,6 @@
 .footer {
-  background-color: $background-footer;
-  border-top: solid $border-footer 1px;
+  // background-color: $background-footer;
+  border-top: solid $bottomBorder 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,9 +11,9 @@
 
 
   &__paragraph {
-    color: $color-quaternary;
+    color: $colorQuaternary;
     opacity: 0.5;
-    font-family: $font-principal;
+    font-family: $fontPrimary;
     font-size: 14px;
   }
 

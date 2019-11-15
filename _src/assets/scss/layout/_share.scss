@@ -1,12 +1,12 @@
 .share {
   &__btn {
-    background-color: $color-secondary;
-    color: $background-footer;
+    background-color: $colorPrimary;
+    color: $colorButton;
     text-transform: uppercase;
     width: 199px;
     height: 50px;
     border-radius: 12px;
-    font-family: $font-principal;
+    font-family: $fontPrimary;
     font-size: 18px;
     //font-weight: 600;
     border: none;

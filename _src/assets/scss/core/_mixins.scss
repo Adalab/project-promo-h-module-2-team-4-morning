@@ -1,0 +1,25 @@
+.collapsible {
+  &__left {
+    display: flex;
+    align-items: center;
+
+    &--title {
+      font-size: 18px;
+      color: $colorSecondary;
+      font-family: $fontPrimary;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 10px;
+    }
+
+    &--fav {
+      color: $colorPrimary;
+      font-size: 18px;
+    }
+  }
+
+  &--arrow {
+    font-size: 18px;
+    color: $colorSecondary;
+  }
+}

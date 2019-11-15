@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  background-color: $background-landing;
+  background-color: $backgroundLanding;
   padding-top: 95px;
   height: 85vh;
 
@@ -15,9 +15,9 @@
 
   &__title {
     font-size: 19.2px;
-    font-family: $font-titleLanding;
+    font-family: $fontLanding;
     font-weight: 900;
-    color: $color-secondary;
+    color: $colorSecondary;
   }
 
   &__text {
@@ -26,13 +26,13 @@
     margin-bottom: 17.8px;
     font-size: 12.8px;
     font-weight: normal;
-    color: $color-tertiary;
-    font-family: $font-principal;
+    color: $colorTertiary;
+    font-family: $fontLanding;
   }
 
   &__menu {
     max-width: 268px;
-    border: $border-menu solid 1.6px;
+    border: $menuBorder solid 1.6px;
     border-radius: 4px;
     margin-bottom: 38.6px;    
   }
@@ -40,17 +40,17 @@
   &__button {
     display: block;
     margin-bottom: 30px;
-    background: $background-button;
+    background: $colorButton;
     min-height: 42px;
     width: 129px;
     border-radius: 21px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: $font-principal;
+    font-family: $fontPrimary;
     font-size: 16px;
     font-weight: 600;
-    color: #ffffff;
+    color: $colorButton;
     text-decoration-line: none;
     text-transform: uppercase;
   }
@@ -76,7 +76,7 @@
     &--fav {
       width: 32px;
       font-size: 22.4px;
-      color: $color-secondary;
+      color: $colorSecondary;
       text-align: center;
 
     }
@@ -84,8 +84,8 @@
     &--text {
       width: 50px;
       font-size: 12.8px;
-      font-family: $font-principal;
-      color: $color-primary;
+      font-family: $fontPrimary;
+      color: $colorPrimary;
       font-weight: normal;
       text-align: center;
 
@@ -118,7 +118,7 @@
     &__menu {
       //max-width: 325px;
       width: 325px;
-      border: $border-menu solid 2px;
+      border: $menuBorder solid 2px;
       border-radius: 5px;
       margin-bottom: 186px;
     }
