@@ -3,6 +3,8 @@
   text-transform: uppercase;
   font-family: $fontPrimary;
   display: flex;
+  border-bottom: $bottomBorder solid 1px;
+  padding-top: 25px;
 
   &__title {
     font-size: 14px;

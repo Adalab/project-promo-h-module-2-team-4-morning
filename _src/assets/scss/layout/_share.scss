@@ -1,4 +1,8 @@
 .share {
+  border-bottom: $bottomBorder solid 1px;
+  margin-bottom: 30px;
+  padding-top: 25px;
+
   &__btn {
     background-color: $colorPrimary;
     color: $colorButton;
@@ -13,6 +17,9 @@
     justify-content: center;
     align-items: center;
     margin: 30px auto;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+
+
   }
 
   &__icon {
@@ -24,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: red solid;
 
   &__title {
     color: $colorSecondary;

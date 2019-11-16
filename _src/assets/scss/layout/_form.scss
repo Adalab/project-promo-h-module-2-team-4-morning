@@ -1,6 +1,8 @@
 .fill {
   display: flex;
   flex-direction: column;
+  border-bottom: $bottomBorder solid 1px;
+  padding-top: 25px;
 
   &__lable {
     color: $colorTertiary;
@@ -17,6 +19,7 @@
     color: $placeholderColor;
     padding-left: 9px;
     margin-bottom: 20px;
+    width: 100%;
   }
 
   &__image {
