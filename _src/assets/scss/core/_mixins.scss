@@ -1,4 +1,8 @@
 .collapsible {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
   &__left {
     display: flex;
     align-items: center;

@@ -9,13 +9,47 @@
     font-family: $fontPrimary;
     font-size: 18px;
     //font-weight: 600;
-    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px auto;
   }
+
   &__icon {
-  padding-right: 9px;
+    padding-right: 9px;
+  }
 }
+
+.twitter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    color: $colorSecondary;
+    font-size: 18px;
+    font-family: $fontPrimary;
+    font-weight: 600;
+    text-align: center;
+    border: #fabada solid;
+
+  }
+
+  &__link {
+    color: $colorPrimary;
+    font-size: 12px;
+    font-family: $fontPrimary;
+    font-weight: 600;
+    text-align: center;
+    border: springgreen solid;
+  }
+
+  &__button {
+    background: #00a0f5;
+    color: $colorButton;
+    border-radius: 3px;
+    width: 181px;
+    height: 30px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+  }
 }

@@ -1,61 +1,68 @@
-<form action="#" method="post"></form>
-<li class="input__design">
+<form action="#" method="post">
   <partial src="_collapsible.html" far="far" icon="fa-object-ungroup" text="Diseña"></partial>
-  <div class="design-box">
+  <fieldset class="design-box">
     <h3 class="design-box__title">Colores</h3>
     <div class="design-box__themes">
-      <div class="design-box__theme" for="color1">
-        <input id="color1" type="radio" value="color1" name="color-palette" />
-        <div class="colors__container">
-          <div class="colors colors--green1"></div>
-          <div class="colors colors--green2"></div>
-          <div class="colors colors--green3"></div>
-        </div>
+      <div>
+        <label class="design-box__theme" for="color1">
+          <input id="color1" type="radio" value="color1" name="color-palette" />
+          <div class="colors__container">
+            <div class="colors colors--green1"></div>
+            <div class="colors colors--green2"></div>
+            <div class="colors colors--green3"></div>
+          </div>
+        </label>
       </div>
-      <div class="design-box__theme" for="color2">
-        <input id="color2" type="radio" value="color2" name="color-palette" />
-        <div class="colors__container">
-          <div class="colors colors--red1"></div>
-          <div class="colors colors--red2"></div>
-          <div class="colors colors--red3"></div>
-        </div>
+      <div>
+        <label class="design-box__theme" for="color2">
+          <input id="color2" type="radio" value="color2" name="color-palette" />
+          <div class="colors__container">
+            <div class="colors colors--red1"></div>
+            <div class="colors colors--red2"></div>
+            <div class="colors colors--red3"></div>
+          </div>
+        </label>
       </div>
-      <div class="design-box__theme" for="color3">
-        <input id="color3" type="radio" value="color3" name="color-palette" />
-        <div class="colors__container">
-          <div class="colors colors--gray1"></div>
-          <div class="colors colors--gray2"></div>
-          <div class="colors colors--gray3"></div>
-        </div>
+      <div>
+        <label class="design-box__theme" for="color3">
+          <input id="color3" type="radio" value="color3" name="color-palette" />
+          <div class="colors__container">
+            <div class="colors colors--gray1"></div>
+            <div class="colors colors--gray2"></div>
+            <div class="colors colors--gray3"></div>
+          </div>
+        </label>
       </div>
     </div>
-  </div>
-</li>
-<li class="fill">
+  </fieldset>
   <partial src="_collapsible.html" far="far" icon="fa-keyboard" text="Rellena"></partial>
-  <div class="fill__form">
-    <label class="form--lable" for="name">Nombre completo</label>
-    <input class="form--box" type="text" id="name" name="name" placeholder="Ej: Sally Jill" required />
-    <label class="form--lable" for="surnames">Puesto</label>
-    <input class="form--box" type="text" id="surnames" name="surnames" placeholder="Ej: Front-end unicorn" required />
-    <label class="form--lable" for="image">Imagen de perfil</label>
-    <div class="form--image">
-      <a class="form--image--button">Añadir imagen</a>
-      <div class="form--image--miniature"></div>
+  <fieldset class="fill">
+    <label class="fill__lable" for="name">Nombre completo</label>
+    <input class="fill__box" type="text" id="name" name="name" placeholder="Ej: Sally Jill" required />
+    <label class="fill__lable" for="surnames">Puesto</label>
+    <input class="fill__box" type="text" id="surnames" name="surnames" placeholder="Ej: Front-end unicorn" required />
+    <label class="fill__lable" for="image">Imagen de perfil</label>
+    <div class="fill__image">
+      <a class="fill__image--button">Añadir imagen</a>
+      <div class="fill__image--miniature"></div>
     </div>
-    <label class="form--lable" for="email">Email</label>
-    <input class="form--box" type="email" id="email" name="email" placeholder="Ej: sally-hill@gmail.com" required />
-    <label class="form--lable" for="phone">Teléfono</label>
-    <input class="form--box" type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55" required />
-    <label class="form--lable" for="linkedin">Linkedin</label>
-    <input class="form--box" type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill"
+    <label class="fill__lable" for="email">Email</label>
+    <input class="fill__box" type="email" id="email" name="email" placeholder="Ej: sally-hill@gmail.com" required />
+    <label class="fill__lable" for="phone">Teléfono</label>
+    <input class="fill__box" type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55" required />
+    <label class="fill__lable" for="linkedin">Linkedin</label>
+    <input class="fill__box" type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill"
       required />
-    <label class="form--lable" for="github">Github</label>
-    <input class="form--box" type="text" id="github" name="github" placeholder="Ej: @sally-hill" required />
-    </form>
-  </div>
-</li>
-<li class="share">
+    <label class="fill__lable" for="github">Github</label>
+    <input class="fill__box" type="text" id="github" name="github" placeholder="Ej: @sally-hill" required />
+  </fieldset>
   <partial src="_collapsible.html" far="fas" icon="fa-share-alt" text="Comparte"></partial>
-  <button class="share__btn"><i class="far fa-address-card share__icon"></i>Crear tarjeta</button>
-</li>
+  <fieldset>
+    <button class="share__btn"><i class="far fa-address-card share__icon"></i>Crear tarjeta</button>
+  </fieldset>
+  <fieldset class="twitter">
+    <h2 class="twitter__title">La tarjeta ha sido creada:</h2>
+    <a class="twitter__link" href="#">https://www.awesome-profile-card.com?id=A456DF0001</a>
+    <button class="twitter__button">Compartit en Twitter</button>
+  </fieldset>
+</form>
