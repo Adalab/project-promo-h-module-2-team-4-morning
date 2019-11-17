@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 
-console.log(">> Ready :)");
+alert('>> Ready :)');
 
 /**
  * Reset del formulario
  */
 
-let form = document.querySelector("form");
-const resetFormBtn = document.querySelector(".preview__reset");
+let form = document.querySelector('form');
+const resetFormBtn = document.querySelector('.preview__reset');
 
 function resetForm() {
   form.reset();
 }
 
-resetFormBtn.addEventListener("click", resetForm);
+resetFormBtn.addEventListener('click', resetForm);
