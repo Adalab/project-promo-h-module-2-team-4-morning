@@ -1,6 +1,6 @@
 'use strict';
 
-alert('>> Ready :)');
+console.log('>> Ready :)');
 
 /**
  * Reset del formulario
