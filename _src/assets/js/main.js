@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('>> Ready :)');
-
 /**
  * Reset del formulario
  */
