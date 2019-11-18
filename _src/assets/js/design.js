@@ -1,6 +1,7 @@
 "use strict";
 
 // Color palette 1 //
+changeColor1();
 
 const selectPalette1 = document.getElementById("color1");
 function changeColor1() {
