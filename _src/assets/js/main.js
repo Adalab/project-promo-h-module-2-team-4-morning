@@ -16,10 +16,6 @@ function resetForm() {
 resetFormBtn.addEventListener('click', resetForm);
 
 
-let listenerFill = document.querySelector('.fill');
-let changeTitle = document.querySelector('.preview__display--title');
-let changeSubtitle = document.querySelector('.preview__display--subtitle');
-
 /*
 let selectElement = function (ev) {
   var choose = ev.target.value;
@@ -34,6 +30,11 @@ let selectElement = function (ev) {
   }
 };
 */
+
+const listenerFill = document.querySelector('.fill');
+const changeTitle = document.querySelector('.preview__display--title');
+const changeSubtitle = document.querySelector('.preview__display--subtitle');
+
 let selectElement = function () {
   let inputName = document.getElementById('name');
   let inputSurname = document.getElementById('surnames');
