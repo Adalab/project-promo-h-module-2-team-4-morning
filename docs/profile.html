@@ -26,28 +26,33 @@
                     <article class="preview__display">
                         <header class="preview__display--header">
                             <div class="preview__display--container">
-                                 <h3 class="preview__display--title">Nombre Apellidos</h3>
+                                 <h3 class="preview__display--title js-preview-title">Nombre Apellidos</h3>
 
-                                 <h3 class="preview__display--subtitle">Profesión</h3>
+                                 <h3 class="preview__display--subtitle js-preview-subtitle">Profesión</h3>
 
                             </div>
                         </header>
                         <div class="preview__display--img"></div>
                         <footer class="preview__display--footer menu">
                             <ul class="menu__list">
-                                <li class="menu__items menu__items--phone"> <a class="menu__links" href="#"><i class="fas fa-mobile-alt"></i
-            ></a>
+                                <li class="menu__items menu__items--phone"> <a class="menu__links js-link-phone" href="" target="_blank">
+              <i class="fas fa-mobile-alt"></i>
+            </a>
 
                                 </li>
-                                <li class="menu__items menu__items--email"> <a class="menu__links" href="#"><i class="far fa-envelope"></i></a>
+                                <li class="menu__items menu__items--email"> <a class="menu__links js-link-email" href="" target="_blank">
+              <i class="far fa-envelope"></i>
+            </a>
 
                                 </li>
-                                <li class="menu__items menu__items--linkedin"> <a class="menu__links" href="#"><i class="fab fa-linkedin-in"></i
-            ></a>
+                                <li class="menu__items menu__items--linkedin"> <a class="menu__links js-link-linkdedin" href="" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
 
                                 </li>
-                                <li class="menu__items menu__items--github"> <a class="menu__links" href="#"><i class="fab fa-github-alt"></i
-            ></a>
+                                <li class="menu__items menu__items--github"> <a class="menu__links js-link-github" href="" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
 
                                 </li>
                             </ul>
@@ -57,14 +62,22 @@
             </section>
             <section class="input">
                 <form action="#" method="post">
-                    <partial src="_collapsible.html" far="far" icon="fa-object-ungroup" text="Diseña"></partial>
-                    <fieldset class="design-box">
+                    <legend class="collapsible">
+                        <div class="collapsible__left"> <i class="collapsible__left--fav far fa-object-ungroup"></i>
+
+                             <h2 class="collapsible__left--title">Diseña</h2>
+
+                        </div> <i class="collapsible--arrow fas fa-angle-down"></i>
+
+                    </legend>
+                    <fieldset class="design-box hidden">
                          <h3 class="design-box__title">Colores</h3>
 
                         <div class="design-box__themes">
                             <div>
                                 <label class="design-box__theme" for="color1">
-                                    <input id="color1" type="radio" value="color1" name="color-palette" />
+                                    <input id="color1" type="radio" checked="checked" value="color1" name="color-palette"
+                                    />
                                     <div class="colors__container">
                                         <div class="colors colors--green1"></div>
                                         <div class="colors colors--green2"></div>
@@ -94,14 +107,21 @@
                             </div>
                         </div>
                     </fieldset>
-                    <partial src="_collapsible.html" far="far" icon="fa-keyboard" text="Rellena"></partial>
-                    <fieldset class="fill">
+                    <legend class="collapsible">
+                        <div class="collapsible__left"> <i class="collapsible__left--fav far fa-keyboard"></i>
+
+                             <h2 class="collapsible__left--title">Rellena</h2>
+
+                        </div> <i class="collapsible--arrow fas fa-angle-down"></i>
+
+                    </legend>
+                    <fieldset class="fill hidden">
                         <label class="fill__lable" for="name">Nombre completo</label>
                         <input class="fill__box js-input-name" type="text"
                         id="name" name="name" placeholder="Ej: Sally Jill" required />
-                        <label class="fill__lable " for="surnames">Puesto</label>
-                        <input class="fill__box js-input-position" type="text" id="surnames"
-                        name="surnames" placeholder="Ej: Front-end unicorn" required />
+                        <label class="fill__lable " for="position">Puesto</label>
+                        <input class="fill__box js-input-position" type="text" id="position"
+                        name="position" placeholder="Ej: Front-end unicorn" required />
                         <label class="fill__lable" for="image">Imagen de perfil</label>
                         <div class="fill__image"> <a class="fill__image--button">Añadir imagen</a>
 
@@ -121,31 +141,33 @@
                         <input class="fill__box js-input-github" type="text" id="github"
                         name="github" placeholder="Ej: @sally-hill" required />
                     </fieldset>
-                    <partial src="_collapsible.html" far="fas" icon="fa-share-alt" text="Comparte"></partial>
-                    <fieldset class="share">
+                    <legend class="collapsible">
+                        <div class="collapsible__left"> <i class="collapsible__left--fav fas fa-share-alt"></i>
+
+                             <h2 class="collapsible__left--title">Comparte</h2>
+
+                        </div> <i class="collapsible--arrow fas fa-angle-down"></i>
+
+                    </legend>
+                    <fieldset class="share hidden">
                         <button type="submit" class="share__btn"> <i class="far fa-address-card share__icon"></i>Crear tarjeta</button>
                     </fieldset>
                     <fieldset class="twitter">
                          <h2 class="twitter__title">La tarjeta ha sido creada:</h2>
- <a class="twitter__link" href="#">https://www.awesome-profile-card.com?id=A456DF0001</a
-    >
-    <button class="twitter__button">
-      <i class="twitter__button--icon fab fa-twitter"></i>Compartir en Twitter
-    </button>
-  </fieldset>
-</form>
+ <a class="twitter__link" href="#">https://www.awesome-profile-card.com?id=A456DF0001</a>
 
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p class="footer__paragraph">Awesome profile-cards @2019</p>
-    <img class="footer__logo" src="./assets/images/logo-adalab.png"
-    alt="logo" title="logo adalab" />
-</footer>
-
-  <script type="text/javascript" src="./assets/js/main.js"></script>
-
-</body>
+                        <button
+                        class="twitter__button"> <i class="twitter__button--icon fab fa-twitter"></i>Compartir en Twitter</button>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__paragraph">Awesome profile-cards @2019</p>
+            <img class="footer__logo" src="./assets/images/logo-adalab.png"
+            alt="logo" title="logo adalab" />
+        </footer>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+    </body>
 
 </html>
