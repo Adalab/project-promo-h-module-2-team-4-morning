@@ -1,8 +1,5 @@
 'use strict';
 
-console.log('>> Ready :)');
-
-
 const inputName = document.querySelector('.js-input-name');
 const inputPosition = document.querySelector('.js-input-position');
 const inputEmail = document.querySelector('.js-input-email');
@@ -12,10 +9,15 @@ const inputGithub = document.querySelector('.js-input-github');
 
 const changeTitle = document.querySelector('.js-preview-title');
 const changeSubtitle = document.querySelector('.js-preview-subtitle');
-const changePhone = document.querySelector('.js-link-phone');
 const changeEmail = document.querySelector('.js-link-email');
+const changePhone = document.querySelector('.js-link-phone');
 const changeLinkedin = document.querySelector('.js-link-linkedin');
 const changeGithub = document.querySelector('.js-link-github');
+
+const containerPhone = document.querySelector('.menu__items--phone');
+const containerEmail = document.querySelector('.menu__items--email');
+const containerLinkedin = document.querySelector('.menu__items--linkedin');
+const containerGithub = document.querySelector('.menu__items--github');
 
 const defaultName = 'Nombre Apellido';
 const defaultPosition = 'Front-end developer';
@@ -38,41 +40,47 @@ const updatePosition = function () {
         changeSubtitle.innerHTML = defaultPosition;
     }
 };
-const updateEmail = function () {
-
-    if (inputEmail.value !== isFilled) {
-        changeEmail.href = `mailto:"${inputEmail.value}"`;
-    } else {
-        changeEmail.href = '';
-    }
-};
-const updateGithub = function () {
-    if (inputGithub.value !== isFilled) {
-        const profile = inputGithub.value.slice(1);
-        changeGithub.href = 'https://www.github.com/' + profile + '/';
-    } else {
-        changeGithub.href = '';
-    }
-};
 const updatePhone = function () {
     if (inputPhone.value !== isFilled) {
-
+        containerPhone.classList.remove('js-filter');
         changePhone.href = 'tel:+' + inputPhone.value;
     } else {
+        containerPhone.classList.add('js-filter');
         changePhone.href = '';
     }
 };
-const updateLinkedin = function () {
-    console.log('Fururla');
-    debugger;
-    if (inputLinkedin.value !== isFilled) {
-        const profile = inputLinkedin.value;
-        changeLinkedin.href = 'https://www.linkedin.com/in/' + profile + '/';
+
+const updateEmail = function () {
+    if (inputEmail.value !== isFilled) {
+        containerEmail.classList.remove('js-filter');
+        changeEmail.href = `mailto:"${inputEmail.value}"`;
     } else {
+        containerEmail.classList.add('js-filter');
+        changeEmail.href = '';
+    }
+};
+
+const updateLinkedin = function () {
+    if (inputLinkedin.value !== isFilled) {
+        containerLinkedin.classList.remove('js-filter');
+        const profile = inputLinkedin.value;
+        changeLinkedin.href = 'https://www.' + profile;
+    } else {
+        containerLinkedin.classList.add('js-filter');
         changeLinkedin.href = '';
     }
 };
 
+const updateGithub = function () {
+    if (inputGithub.value !== isFilled) {
+        containerGithub.classList.remove('js-filter');
+        const profile = inputGithub.value.slice(1);
+        changeGithub.href = 'https://www.github.com/' + profile;
+    } else {
+        containerGithub.classList.add('js-filter');
+        changeGithub.href = '';
+    }
+};
 
 
 inputName.addEventListener('keyup', updateName);
