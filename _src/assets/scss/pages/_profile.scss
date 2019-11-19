@@ -11,5 +11,6 @@
   @media all and (min-width: 768px) {
     display: flex;
     background-image: linear-gradient(to bottom, $backgroundLanding, $backgroundFooter);
+    min-height: 852px;
   }
 }
