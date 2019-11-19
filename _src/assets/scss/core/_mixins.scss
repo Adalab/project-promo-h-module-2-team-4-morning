@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid $bottomBorder;
 
   &__left {
     display: flex;
@@ -25,5 +27,14 @@
   &--arrow {
     font-size: 18px;
     color: $colorSecondary;
+    transition: transform .2s ease;
+  }
+
+  &.open {
+    border-bottom: 1px solid transparent;
+
+    .collapsible--arrow {
+      transform: rotate(-180deg) translateY(50%);
+    }
   }
 }
