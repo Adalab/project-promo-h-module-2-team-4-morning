@@ -22,22 +22,22 @@ const defaultPosition = 'Front-end developer';
 const isFilled = ''; // No está relleno
 
 
-const changeName = function () {
+const updateName = function () {
 
     if (inputName.value !== isFilled) {
         changeTitle.innerHTML = inputName.value;
     } else {
         changeTitle.innerHTML = defaultName;
     }
-}
-const changePosition = function () {
+};
+const updatePosition = function () {
 
     if (inputPosition.value !== isFilled) {
         changeSubtitle.innerHTML = inputPosition.value;
     } else {
         changeSubtitle.innerHTML = defaultPosition;
     }
-}
+};
 const updateEmail = function () {
 
     if (inputEmail.value !== isFilled) {
@@ -45,19 +45,39 @@ const updateEmail = function () {
     } else {
         changeEmail.href = '';
     }
-}
+};
 const updateGithub = function () {
-
     if (inputGithub.value !== isFilled) {
-        changeGithub.href = `'https://github.com/${inputGithub.value}/'`;
+        const profile = inputGithub.value.slice(1);
+        changeGithub.href = 'https://www.github.com/' + profile + '/';
     } else {
         changeGithub.href = '';
     }
-}
+};
+const updatePhone = function () {
+    if (inputPhone.value !== isFilled) {
+
+        changePhone.href = 'tel:+' + inputPhone.value;
+    } else {
+        changePhone.href = '';
+    }
+};
+const updateLinkedin = function () {
+    console.log('Fururla');
+    debugger;
+    if (inputLinkedin.value !== isFilled) {
+        const profile = inputLinkedin.value;
+        changeLinkedin.href = 'https://www.linkedin.com/in/' + profile + '/';
+    } else {
+        changeLinkedin.href = '';
+    }
+};
 
 
 
-inputName.addEventListener('keyup', changeName);
-inputPosition.addEventListener('keyup', changePosition);
+inputName.addEventListener('keyup', updateName);
+inputPosition.addEventListener('keyup', updatePosition);
 inputEmail.addEventListener('keyup', updateEmail);
 inputGithub.addEventListener('keyup', updateGithub);
+inputPhone.addEventListener('keyup', updatePhone);
+inputLinkedin.addEventListener('keyup', updateLinkedin);
