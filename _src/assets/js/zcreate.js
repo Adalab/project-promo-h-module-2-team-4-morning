@@ -15,9 +15,19 @@ const checkCheck = function (event) {
 // console.log(fonmInputarrValue);
 
 inputName.addEventListener('keyup', checkCheck);
-inputName.addEventListener('keyup', checkCheck);
 inputPosition.addEventListener('keyup', checkCheck);
 inputEmail.addEventListener('keyup', checkCheck);
 inputGithub.addEventListener('keyup', checkCheck);
 inputPhone.addEventListener('keyup', checkCheck);
 inputLinkedin.addEventListener('keyup', checkCheck);
+
+const twitterBtn = document.querySelector(".twitter");
+const twitterActive = function (event) {
+    if (formValidation.checkValidity() === true) {
+        twitterBtn.classList.remove('hidden');
+    } else {
+        twitterBtn.classList.add('hidden');
+    };
+};
+
+createAllowCard.addEventListener('click', twitterActive);
