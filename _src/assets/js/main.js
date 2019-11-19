@@ -19,7 +19,7 @@ function resetForm() {
   updateGithub();
   updatePhone();
   updateLinkedin();
+  twitterActive();
 }
 
 resetFormBtn.addEventListener("click", resetForm);
-

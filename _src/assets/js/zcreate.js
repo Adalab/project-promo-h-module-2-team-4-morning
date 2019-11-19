@@ -4,11 +4,11 @@ const createAllowCard = document.querySelector('.js-share__btn')
 
 
 const checkCheck = function (event) {
-    if (formValidation.checkValidity() === true) {
-        createAllowCard.classList.remove('js-filter');
-    } else {
-        createAllowCard.classList.add('js-filter');
-    };
+  if (formValidation.checkValidity() === true) {
+    createAllowCard.classList.remove('js-filter');
+  } else {
+    createAllowCard.classList.add('js-filter');
+  };
 };
 // const formInputsArr = document.querySelectorAll(".fill__box");
 // console.log(formInputsArr);
@@ -23,11 +23,12 @@ inputLinkedin.addEventListener('keyup', checkCheck);
 
 const twitterBtn = document.querySelector(".twitter");
 const twitterActive = function (event) {
-    if (formValidation.checkValidity() === true) {
-        twitterBtn.classList.remove('hidden');
-    } else {
-        twitterBtn.classList.add('hidden');
-    };
+  event.preventDefault(event);
+  if (formValidation.checkValidity() === true) {
+    twitterBtn.classList.remove('hidden');
+  } else {
+    twitterBtn.classList.add('hidden');
+  };
 };
 
 createAllowCard.addEventListener('click', twitterActive);
