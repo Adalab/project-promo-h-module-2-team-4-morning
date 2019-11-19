@@ -56,17 +56,20 @@ const updateGithub = function () {
 };
 const updatePhone = function () {
     if (inputPhone.value !== isFilled) {
-        const profile = inputPhone.value.slice(1);
-        changePhone.href = 'https://www.github.com/' + profile + '/';
+
+        changePhone.href = 'tel:+' + inputPhone.value;
     } else {
         changePhone.href = '';
     }
 };
 const updateLinkedin = function () {
-    if (inputGithub.value !== isFilled) {
-        changeGithub.href = 'https://www.linkedin.com/in/' + inputGithub.value + '/';
+    console.log('Fururla');
+    debugger;
+    if (inputLinkedin.value !== isFilled) {
+        const profile = inputLinkedin.value;
+        changeLinkedin.href = 'https://www.linkedin.com/in/' + profile + '/';
     } else {
-        changeGithub.href = '';
+        changeLinkedin.href = '';
     }
 };
 
