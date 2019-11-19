@@ -32,3 +32,9 @@ const twitterActive = function (event) {
 };
 
 createAllowCard.addEventListener('click', twitterActive);
+// inputName.addEventListener('keyup', twitterActive);
+// inputPosition.addEventListener('keyup', twitterActive);
+// inputEmail.addEventListener('keyup', twitterActive);
+// inputGithub.addEventListener('keyup', twitterActive);
+// inputPhone.addEventListener('keyup', twitterActive);
+// inputLinkedin.addEventListener('keyup', twitterActive);
