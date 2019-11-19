@@ -22,7 +22,7 @@ const defaultPosition = 'Front-end developer';
 const isFilled = ''; // No está relleno
 
 
-const changeName = function () {
+const updateName = function () {
 
     if (inputName.value !== isFilled) {
         changeTitle.innerHTML = inputName.value;
@@ -30,7 +30,7 @@ const changeName = function () {
         changeTitle.innerHTML = defaultName;
     }
 };
-const changePosition = function () {
+const updatePosition = function () {
 
     if (inputPosition.value !== isFilled) {
         changeSubtitle.innerHTML = inputPosition.value;
@@ -55,11 +55,18 @@ const updateGithub = function () {
     }
 };
 const updatePhone = function () {
-    if (inputGPhone.value !== isFilled) {
+    if (inputPhone.value !== isFilled) {
         const profile = inputPhone.value.slice(1);
         changePhone.href = 'https://www.github.com/' + profile + '/';
     } else {
         changePhone.href = '';
+    }
+};
+const updateLinkedin = function () {
+    if (inputGithub.value !== isFilled) {
+        changeGithub.href = 'https://www.linkedin.com/in/' + inputGithub.value + '/';
+    } else {
+        changeGithub.href = '';
     }
 };
 
@@ -70,3 +77,4 @@ inputPosition.addEventListener('keyup', updatePosition);
 inputEmail.addEventListener('keyup', updateEmail);
 inputGithub.addEventListener('keyup', updateGithub);
 inputPhone.addEventListener('keyup', updatePhone);
+inputLinkedin.addEventListener('keyup', updateLinkedin);
