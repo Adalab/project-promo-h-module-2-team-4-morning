@@ -36,14 +36,15 @@
 
     &--container {
       padding-left: 20px;
+      border-left: 5px solid $colorOption1-2;
     }
-
 
     &--title {
       margin-bottom: 4px;
       font-size: 18px;
       font-weight: bold;
       line-height: 1.11;
+      color: $colorOption1-1;
     }
 
     &--subtitle {
@@ -64,6 +65,7 @@
   .menu__items {
     border-radius: 50%;
     margin-left: 10px;
+    border: 2px solid $colorOption1-3;
   }
 
   .menu__links {
@@ -73,6 +75,7 @@
     justify-content: center;
     height: 25px;
     text-decoration: none;
+    color: $colorOption1-1;
   }
 }
 
@@ -126,7 +129,7 @@
   }
 }
 
-//PALETTE 3 // 
+//PALETTE 3 //
 
 .palette3 {
   .preview__display {
