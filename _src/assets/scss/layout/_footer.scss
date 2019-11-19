@@ -18,7 +18,12 @@
     width: 103px;
     padding-top: 12px;
   }
-}
+  &__logo2 {
+    flex-wrap: wrap;   
+    height: 36px;
+
+     }
+}  
 
 @media all and (min-width: 768px) {
   .footer {

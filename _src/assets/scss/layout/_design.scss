@@ -5,6 +5,7 @@
   display: flex;
   border-bottom: $bottomBorder solid 1px;
   padding-top: 25px;
+
   // overflow: hidden;
   // opacity: 0;
   // max-height: 0;
@@ -14,6 +15,7 @@
     margin-left: 20px;
     flex-basis: 50%;
     font-weight: normal;
+
   }
 
   &__themes {
@@ -23,12 +25,13 @@
   &__theme {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     padding-bottom: 20px;
   }
 
   .colors__container {
     display: flex;
+    margin-left: 10px;
   }
 
   .colors {
