@@ -34,4 +34,3 @@ function show3() {
     }
 }
 collapsible3.addEventListener("click", show3);
-console.log(collapsible3);
