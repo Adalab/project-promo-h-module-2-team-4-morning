@@ -2,6 +2,7 @@
 const formValidation = document.querySelector('.js-form-container');
 const createAllowCard = document.querySelector('.js-share__btn')
 
+
 const checkCheck = function (event) {
     if (formValidation.checkValidity() === true) {
         createAllowCard.classList.remove('js-filter');
