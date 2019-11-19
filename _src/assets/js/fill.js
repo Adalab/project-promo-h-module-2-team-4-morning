@@ -1,106 +1,63 @@
-"use strict";
+'use strict';
 
-console.log(">> Ready :)");
+console.log('>> Ready :)');
 
-/*
-let selectElement = function (ev) {
-  var choose = ev.target.value;
-  alert('El target es: ' + ev.target + 'El current target es: ' + ev.currentTarget);
-  if(choose ==='name'){
-    let inputValue = ev.currentTarget.value;
-    changeTitle.innerHTML = inputValue;
-  }
-  else if(choose === 'surnames'){
-    let inputValue = ev.currentTarget.value;
-    changeSubtitle.innerHTML = inputValue;
-  }
-};
-*/
-const listenerFill = document.querySelector(".fill");
-/*
-const changeTitle = document.querySelector('.preview__display--title');
-const changeSubtitle = document.querySelector('.preview__display--subtitle');
-*/
-const inputName = document.querySelector(".js-input-name");
-const inputPosition = document.querySelector(".js-input-position");
-const inputEmail = document.querySelector(".js-input-email");
 
-let selectElement = function () {
-    let inputName = document.getElementById("name");
-    let inputSurname = document.getElementById("surnames");
-    inputName.addEventListener("input", writeTitle);
-    inputSurname.addEventListener("input", writeSubtitle);
-};
-
-function writeTitle(ev) {
-    let inputValue = ev.currentTarget.value;
-    changeTitle.innerHTML = inputValue;
-}
-function writeSubtitle(ev) {
-    let inputValue = ev.currentTarget.value;
-    changeSubtitle.innerHTML = inputValue;
-}* /
-
-//listenerFill.addEventListener('input', selectElement);
-/*const defaultName = "Nombre Apellido";
-const defaultRole = "Front-end developer";
-const isFilled = ""; // No está relleno
-function changeName() {
-    if (formInputName.value !== isFilled) {
-        cardName.innerHTML = formInputName.value;
-    } else { };
-}*/
-
-const inputFirstName = document.querySelector('.js-input-name');
+const inputName = document.querySelector('.js-input-name');
 const inputPosition = document.querySelector('.js-input-position');
 const inputEmail = document.querySelector('.js-input-email');
 const inputPhone = document.querySelector('.js-input-phone');
 const inputLinkedin = document.querySelector('.js-input-linkedin');
 const inputGithub = document.querySelector('.js-input-github');
-const changeTitle = document.querySelector('preview__display--title');
-const changeSubtitle = document.querySelector('preview__display--subtitle');
-/*const changePhone = document.querySelector('preview__display--subtitle');
-const changeEmail = document.querySelector('preview__display--subtitle');
-const changeLinkedin = document.querySelector('preview__display--subtitle');
-const changeGithub = document.querySelector('preview__display--subtitle');*/
 
-const formData = {};
+const changeTitle = document.querySelector('.js-preview-title');
+const changeSubtitle = document.querySelector('.js-preview-subtitle');
+const changePhone = document.querySelector('.js-link-phone');
+const changeEmail = document.querySelector('.js-link-email');
+const changeLinkedin = document.querySelector('.js-link-linkedin');
+const changeGithub = document.querySelector('.js-link-github');
 
-function setForm(ev) {
-    const input = ev.target;
-    const inputName = input.name;
-    const inputValue = input.value;
-    formData[inputName] = inputValue;
-    console.log('Datos del formulario: ', formData);
-    console.log('El nombre del formulario es: ', inputValue);
+const defaultName = 'Nombre Apellido';
+const defaultPosition = 'Front-end developer';
+const isFilled = ''; // No está relleno
 
 
-    if (formData.inputName === 'name') {
-        changeTitle.innerHTML = inputValue;
-    }
-    else if (inputName === 'position') {
-        changeSubtitle.innerHTML = inputValue;
+const changeName = function () {
+
+    if (inputName.value !== isFilled) {
+        changeTitle.innerHTML = inputName.value;
+    } else {
+        changeTitle.innerHTML = defaultName;
     }
 }
-/*
-else if (inputName === 'email') {
-    changeEmail.href = `"mailto:` + inputValue + `"`;
+const changePosition = function () {
+
+    if (inputPosition.value !== isFilled) {
+        changeSubtitle.innerHTML = inputPosition.value;
+    } else {
+        changeSubtitle.innerHTML = defaultPosition;
+    }
 }
-else if (inputName === 'phone') {
-    changePhone.href = `"tel:+` + inputValue + `"`;
+const updateEmail = function () {
+
+    if (inputEmail.value !== isFilled) {
+        changeEmail.href = `mailto:"${inputEmail.value}"`;
+    } else {
+        changeEmail.href = '';
+    }
 }
-else if (inputName === 'linkedin') {
-    changeLinkedin.href = `"https://www.linkedin.com/in/` + inputValue + `/"`;
+const updateGithub = function () {
+
+    if (inputGithub.value !== isFilled) {
+        changeGithub.href = `'https://github.com/${inputGithub.value}/'`;
+    } else {
+        changeGithub.href = '';
+    }
 }
-else if (inputName === 'github') {
-    changeGithub.href = `"https://github.com/` + inputValue + `"`;
-}
-*/
 
 
-inputFirstName.addEventListener('keyup', setForm);
-inputPosition.addEventListener('keyup', setForm);
-inputEmail.addEventListener('keyup', setForm);
-inputPhone.addEventListener('keyup', setForm);
-inputLinkedin.addEventListener('keyup', setForm);
-inputGithub.addEventListener('keyup', setForm);
+
+inputName.addEventListener('keyup', changeName);
+inputPosition.addEventListener('keyup', changePosition);
+inputEmail.addEventListener('keyup', updateEmail);
+inputGithub.addEventListener('keyup', updateGithub);
