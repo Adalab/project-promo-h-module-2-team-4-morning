@@ -21,8 +21,6 @@
     align-items: center;
     margin: 30px auto;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
-
-
   }
 
   &__icon {
@@ -47,7 +45,6 @@
     font-weight: 600;
     text-align: center;
     margin-bottom: 5px;
-
   }
 
   &__link {
@@ -77,4 +74,7 @@
       margin: auto 9.5px auto 0px;
     }
   }
+}
+.js-filter {
+  filter: grayscale(100%);
 }
