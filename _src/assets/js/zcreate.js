@@ -8,7 +8,7 @@ const checkCheck = function (event) {
     createAllowCard.classList.remove('js-filter');
   } else {
     createAllowCard.classList.add('js-filter');
-  };
+  }
 };
 // const formInputsArr = document.querySelectorAll(".fill__box");
 // console.log(formInputsArr);
