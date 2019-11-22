@@ -1,6 +1,6 @@
 'use strict';
 const formValidation = document.querySelector('.js-form-container');
-const createAllowCard = document.querySelector('.js-share__btn')
+const createAllowCard = document.querySelector('.js-share__btn');
 
 
 const checkCheck = function (event) {
@@ -21,7 +21,7 @@ inputGithub.addEventListener('keyup', checkCheck);
 inputPhone.addEventListener('keyup', checkCheck);
 inputLinkedin.addEventListener('keyup', checkCheck);
 
-const twitterBtn = document.querySelector(".twitter");
+const twitterBtn = document.querySelector('.twitter');
 const twitterActive = function (event) {
   event.preventDefault(event);
   if (formValidation.checkValidity() === true) {

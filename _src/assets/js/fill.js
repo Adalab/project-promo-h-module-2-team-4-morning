@@ -77,7 +77,7 @@ const updateGithub = function () {
         const profile = inputGithub.value.slice(1);
         changeGithub.href = 'https://www.github.com/' + profile;
     } else {
-        containerGithub.classList.add('js-filter');
+        containerGithub.classList.add('filter');
         changeGithub.href = '';
     }
 };
