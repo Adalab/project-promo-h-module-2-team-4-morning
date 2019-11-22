@@ -5,9 +5,9 @@ const createAllowCard = document.querySelector('.js-share__btn')
 
 const checkCheck = function (event) {
   if (formValidation.checkValidity() === true) {
-    createAllowCard.classList.remove('js-filter');
+    createAllowCard.classList.remove('filter');
   } else {
-    createAllowCard.classList.add('js-filter');
+    createAllowCard.classList.add('filter');
   }
 };
 // const formInputsArr = document.querySelectorAll(".fill__box");
@@ -28,7 +28,7 @@ const twitterActive = function (event) {
     twitterBtn.classList.remove('hidden');
   } else {
     twitterBtn.classList.add('hidden');
-  };
+  }
 };
 
 createAllowCard.addEventListener('click', twitterActive);
