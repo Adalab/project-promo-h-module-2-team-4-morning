@@ -42,38 +42,38 @@ const updatePosition = function () {
 };
 const updatePhone = function () {
     if (inputPhone.value !== isFilled) {
-        containerPhone.classList.remove('js-filter');
+        containerPhone.classList.remove('filter');
         changePhone.href = 'tel:+' + inputPhone.value;
     } else {
-        containerPhone.classList.add('js-filter');
+        containerPhone.classList.add('filter');
         changePhone.href = '';
     }
 };
 
 const updateEmail = function () {
     if (inputEmail.value !== isFilled) {
-        containerEmail.classList.remove('js-filter');
+        containerEmail.classList.remove('filter');
         changeEmail.href = `mailto:"${inputEmail.value}"`;
     } else {
-        containerEmail.classList.add('js-filter');
+        containerEmail.classList.add('filter');
         changeEmail.href = '';
     }
 };
 
 const updateLinkedin = function () {
     if (inputLinkedin.value !== isFilled) {
-        containerLinkedin.classList.remove('js-filter');
+        containerLinkedin.classList.remove('filter');
         const profile = inputLinkedin.value;
         changeLinkedin.href = 'https://www.' + profile;
     } else {
-        containerLinkedin.classList.add('js-filter');
+        containerLinkedin.classList.add('filter');
         changeLinkedin.href = '';
     }
 };
 
 const updateGithub = function () {
     if (inputGithub.value !== isFilled) {
-        containerGithub.classList.remove('js-filter');
+        containerGithub.classList.remove('filter');
         const profile = inputGithub.value.slice(1);
         changeGithub.href = 'https://www.github.com/' + profile;
     } else {
