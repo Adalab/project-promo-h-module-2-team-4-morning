@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 18px 0 20px 0;
-  height: 20vh;
+  height: 22vh;
 
   &__paragraph {
     color: $colorQuaternary;
@@ -13,7 +13,6 @@
     font-family: $fontPrimary;
     font-size: 14px;
   }
- 
 
   &__logo {
     width: 103px;
@@ -22,8 +21,8 @@
   &__logo2 {
     height: 50px;
     padding-top: 12px;
-     }
-}  
+  }
+}
 
 @media all and (min-width: 768px) {
   .footer {
@@ -35,9 +34,8 @@
     &__logo {
       padding-top: 0;
     }
-    &__logo2{
+    &__logo2 {
       padding-top: 0;
     }
-   
   }
 }

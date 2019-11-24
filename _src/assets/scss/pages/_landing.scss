@@ -5,7 +5,7 @@
   background-color: $backgroundLanding;
   //background-attachment: fixed;
   padding-top: 95px;
-  height: 85vh;
+  height: 78vh;
 
   &__image {
     width: 250px;
@@ -66,7 +66,7 @@
 
   &__item {
     margin-top: 15px;
-    max-width: 75px;
+    width: 60px;
     height: 61px;
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@
     }
 
     &--text {
-      width: 50px;
+      width: 60px;
       font-size: 12.8px;
       font-family: $fontPrimary;
       color: $colorSecondary;
@@ -133,7 +133,7 @@
       }
 
       &--text {
-        width: 55px;
+        width: 75px;
         font-size: 16px;
       }
     }
