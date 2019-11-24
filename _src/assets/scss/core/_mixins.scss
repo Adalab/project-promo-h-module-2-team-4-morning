@@ -27,7 +27,7 @@
   &--arrow {
     font-size: 18px;
     color: $colorSecondary;
-    transition: transform .2s ease;
+    transition: transform 0.2s ease;
   }
 
   &.open {
@@ -36,5 +36,8 @@
     .collapsible--arrow {
       transform: rotate(-180deg) translateY(50%);
     }
+  }
+  &:hover {
+    cursor: pointer;
   }
 }
