@@ -6,6 +6,7 @@
 
 let form = document.querySelector("form");
 const resetFormBtn = document.querySelector(".preview__reset");
+const defaultImage = './assets/images/profile.png';
 
 function resetForm() {
   form.reset();
@@ -19,6 +20,9 @@ function resetForm() {
   updateGithub();
   updatePhone();
   updateLinkedin();
+  profileImage.style.backgroundImage = `url(${defaultImage})`;
+  profilePreview.style.backgroundImage = `url('')`;
+
   // twitterActive();
 }
 

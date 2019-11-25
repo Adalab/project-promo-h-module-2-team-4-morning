@@ -9,7 +9,7 @@
   position: relative;
   padding: 38px 35px 40px 45px;
 
- 
+
 
   @media all and (min-width: 768px) {
     order: 1;
@@ -30,7 +30,9 @@
     width: 240px;
     height: 200px;
     background: url("../images/profile.png");
-    background-size: 100% 105%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__display {
