@@ -51,8 +51,8 @@ function show() {
     };
 
     function handler(event) {
-      updatePreview()
-      checkCheck()
+      updatePreview();
+      checkCheck();
     };
 
     inputArr[i].addEventListener('keyup', handler);
