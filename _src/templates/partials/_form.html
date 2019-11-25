@@ -40,32 +40,37 @@
     <label class="fill__lable" for="name">Nombre completo</label>
     <input class="fill__box js-input-name" type="text" id="name" name="name" placeholder="Ej: Sally Jill" required />
     <label class="fill__lable " for="position">Puesto</label>
-    <input class="fill__box js-input-position" type="text" id="position" name="position" placeholder="Ej: Front-end unicorn" required />
+    <input class="fill__box js-input-position" type="text" id="position" name="position"
+      placeholder="Ej: Front-end unicorn" required />
     <label class="fill__lable" for="image">Imagen de perfil</label>
     <div class="fill__image">
       <a class="fill__image--button">Añadir imagen</a>
       <div class="fill__image--miniature"></div>
     </div>
     <label class="fill__lable" for="email">Email</label>
-    <input class="fill__box js-input-email" type="email" id="email" name="email" placeholder="Ej: sally-hill@gmail.com" required />
+    <input class="fill__box js-input-email" type="email" id="email" name="email" placeholder="Ej: sally-hill@gmail.com"
+      required />
     <label class="fill__lable" for="phone">Teléfono</label>
-    <input class="fill__box js-input-phone" type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55" required />
+    <input class="fill__box js-input-phone" type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55"
+      required />
     <label class="fill__lable" for="linkedin">Linkedin</label>
-    <input class="fill__box js-input-linkedin" type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill" required />
+    <input class="fill__box js-input-linkedin" type="text" id="linkedin" name="linkedin"
+      placeholder="Ej: linkedin.com/in/sally.hill" required />
     <label class="fill__lable" for="github">Github</label>
-    <input class="fill__box js-input-github" type="text" id="github" name="github" placeholder="Ej: @sally-hill" required />
+    <input class="fill__box js-input-github" type="text" id="github" name="github" placeholder="Ej: @sally-hill"
+      required />
   </fieldset>
   <partial src="_collapsible.html" far="fas" icon="fa-share-alt" text="Comparte"></partial>
   <fieldset class="share hidden">
-    <button type="submit" class="share__btn js-share__btn js-filter">
+    <button type="submit" class="share__btn js-share__btn filter">
       <i class="far fa-address-card share__icon"></i>Crear tarjeta
     </button>
-  </fieldset>
-  <fieldset class="twitter hidden">
-    <h2 class="twitter__title">La tarjeta ha sido creada:</h2>
-    <a class="twitter__link" href="#">https://www.awesome-profile-card.com?id=A456DF0001</a>
-    <button class="twitter__button">
-      <i class="twitter__button--icon fab fa-twitter"></i>Compartir en Twitter
-    </button>
+    <fieldset class="twitter hidden">
+      <h2 class="twitter__title">La tarjeta ha sido creada:</h2>
+      <a class="twitter__link" href="#">https://www.awesome-profile-card.com?id=A456DF0001</a>
+      <button class="twitter__button">
+        <i class="twitter__button--icon fab fa-twitter"></i>Compartir en Twitter
+      </button>
+    </fieldset>
   </fieldset>
 </form>
