@@ -2,6 +2,7 @@
 
 /**
  * Reset del formulario
+ * hay que poner el form con un querySelector con una clase js
  */
 
 let form = document.querySelector("form");
@@ -13,12 +14,8 @@ function resetForm() {
   document.querySelector(".preview__display").classList.remove("palette2");
   document.querySelector(".preview__display").classList.remove("palette3");
   checkCheck();
-  updateName();
-  updatePosition();
-  updateEmail();
-  updateGithub();
-  updatePhone();
-  updateLinkedin();
+  show();
+  updatePreview();
   // twitterActive();
 }
 

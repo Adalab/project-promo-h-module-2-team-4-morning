@@ -1,91 +1,61 @@
-// 'use strict';
+'use strict';
 
-// const inputName = document.querySelector('.js-input-name');
-// const inputPosition = document.querySelector('.js-input-position');
-// const inputEmail = document.querySelector('.js-input-email');
-// const inputPhone = document.querySelector('.js-input-phone');
-// const inputLinkedin = document.querySelector('.js-input-linkedin');
-// const inputGithub = document.querySelector('.js-input-github');
+const inputArr = document.querySelectorAll('.js-input');
+const previewArr = document.querySelectorAll('.js-preview');
+const formValidation = document.querySelector('.js-form-container');
+const createAllowCard = document.querySelector('.js-share__btn');
 
-// const changeTitle = document.querySelector('.js-preview-title');
-// const changeSubtitle = document.querySelector('.js-preview-subtitle');
-// const changeEmail = document.querySelector('.js-link-email');
-// const changePhone = document.querySelector('.js-link-phone');
-// const changeLinkedin = document.querySelector('.js-link-linkedin');
-// const changeGithub = document.querySelector('.js-link-github');
+function show() {
+  for (let i = 0; i < inputArr.length; i++) {
 
-// const containerPhone = document.querySelector('.menu__items--phone');
-// const containerEmail = document.querySelector('.menu__items--email');
-// const containerLinkedin = document.querySelector('.menu__items--linkedin');
-// const containerGithub = document.querySelector('.menu__items--github');
-
-// const defaultName = 'Nombre Apellido';
-// const defaultPosition = 'Front-end developer';
-// const isFilled = ''; // No está relleno
+    inputArr[i].value;
+    console.log(inputArr[i].value);
 
 
-// const updateName = function () {
+    function checkCheck() {
+      if (formValidation.checkValidity() === true) {
+        createAllowCard.classList.remove('js-filter');
+      } else {
+        createAllowCard.classList.add('js-filter');
+      };
+    };
 
-//     if (inputName.value !== isFilled) {
-//         changeTitle.innerHTML = inputName.value;
-//     } else {
-//         changeTitle.innerHTML = defaultName;
-//     }
-// };
-// const updatePosition = function () {
+    function updatePreview() {
+      const defaultPreviewArr = [];
+      defaultPreviewArr[0] = 'Nombre y Apellido';
+      defaultPreviewArr[1] = 'Front-End';
+      defaultPreviewArr[2] = '';
+      defaultPreviewArr[3] = '';
+      defaultPreviewArr[4] = '';
+      defaultPreviewArr[5] = '';
 
-//     if (inputPosition.value !== isFilled) {
-//         changeSubtitle.innerHTML = inputPosition.value;
-//     } else {
-//         changeSubtitle.innerHTML = defaultPosition;
-//     }
-// };
-// const updatePhone = function () {
-//     if (inputPhone.value !== isFilled) {
-//         containerPhone.classList.remove('js-filter');
-//         changePhone.href = 'tel:+' + inputPhone.value;
-//     } else {
-//         containerPhone.classList.add('js-filter');
-//         changePhone.href = '';
-//     }
-// };
+      const hrefArr = [];
+      hrefArr[2] = 'mailto:';
+      hrefArr[3] = 'tel:+';
+      hrefArr[4] = 'https://www.linkedin.com/in/';
+      hrefArr[5] = 'https://www.github.com/';
 
-// const updateEmail = function () {
-//     if (inputEmail.value !== isFilled) {
-//         containerEmail.classList.remove('js-filter');
-//         changeEmail.href = `mailto:"${inputEmail.value}"`;
-//     } else {
-//         containerEmail.classList.add('js-filter');
-//         changeEmail.href = '';
-//     }
-// };
+      if (i < 2) {
+        if (inputArr[i].value == false) {
+          previewArr[i].innerHTML = defaultPreviewArr[i];
+        } else {
+          previewArr[i].innerHTML = inputArr[i].value;
+        }
+      } else {
+        if (inputArr[i].value == false) {
+          previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
+        } else {
+          previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
+        }
+      }
+    };
 
-// const updateLinkedin = function () {
-//     if (inputLinkedin.value !== isFilled) {
-//         containerLinkedin.classList.remove('js-filter');
-//         const profile = inputLinkedin.value;
-//         changeLinkedin.href = 'https://www.' + profile;
-//     } else {
-//         containerLinkedin.classList.add('js-filter');
-//         changeLinkedin.href = '';
-//     }
-// };
+    function handler(event) {
+      updatePreview()
+      checkCheck()
+    };
 
-// const updateGithub = function () {
-//     if (inputGithub.value !== isFilled) {
-//         containerGithub.classList.remove('js-filter');
-//         const profile = inputGithub.value.slice(1);
-//         changeGithub.href = 'https://www.github.com/' + profile;
-//     } else {
-//         containerGithub.classList.add('js-filter');
-//         changeGithub.href = '';
-//     }
-// };
-
-
-// inputName.addEventListener('keyup', updateName);
-// inputPosition.addEventListener('keyup', updatePosition);
-// inputEmail.addEventListener('keyup', updateEmail);
-// inputGithub.addEventListener('keyup', updateGithub);
-// inputPhone.addEventListener('keyup', updatePhone);
-// inputLinkedin.addEventListener('keyup', updateLinkedin);
+    inputArr[i].addEventListener('keyup', handler);
+  };
+};
+show();
