@@ -31,18 +31,11 @@
     padding-bottom: 20px;
 
     &--button {
+      @include center();
+      @include buttons();
       width: 140px;
-      height: 30px;
       background: $colorPrimary;
-      border-radius: 3px;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-      color: $colorButton;
-      font-family: $fontPrimary;
-      font-size: 14px;
-      line-height: 1.43;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       &:hover {
         cursor: pointer;
       }
