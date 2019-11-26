@@ -30,7 +30,9 @@
     width: 240px;
     height: 200px;
     background: url("../images/profile.png");
-    background-size: 100% 105%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__display {

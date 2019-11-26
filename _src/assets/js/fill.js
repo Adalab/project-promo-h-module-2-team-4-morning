@@ -1,91 +1,104 @@
 'use strict';
 
-const inputName = document.querySelector('.js-input-name');
-const inputPosition = document.querySelector('.js-input-position');
-const inputEmail = document.querySelector('.js-input-email');
-const inputPhone = document.querySelector('.js-input-phone');
-const inputLinkedin = document.querySelector('.js-input-linkedin');
-const inputGithub = document.querySelector('.js-input-github');
+const inputArr = document.querySelectorAll('.js-input');
+const previewArr = document.querySelectorAll('.js-preview');
+const formValidation = document.querySelector('.js-form-container');
+const createAllowCard = document.querySelector('.js-share__btn');
 
-const changeTitle = document.querySelector('.js-preview-title');
-const changeSubtitle = document.querySelector('.js-preview-subtitle');
-const changeEmail = document.querySelector('.js-link-email');
-const changePhone = document.querySelector('.js-link-phone');
-const changeLinkedin = document.querySelector('.js-link-linkedin');
-const changeGithub = document.querySelector('.js-link-github');
-
-const containerPhone = document.querySelector('.menu__items--phone');
-const containerEmail = document.querySelector('.menu__items--email');
-const containerLinkedin = document.querySelector('.menu__items--linkedin');
-const containerGithub = document.querySelector('.menu__items--github');
-
-const defaultName = 'Nombre Apellido';
-const defaultPosition = 'Front-end developer';
-const isFilled = ''; // No está relleno
-
-
-const updateName = function () {
-
-    if (inputName.value !== isFilled) {
-        changeTitle.innerHTML = inputName.value;
-    } else {
-        changeTitle.innerHTML = defaultName;
-    }
-};
-const updatePosition = function () {
-
-    if (inputPosition.value !== isFilled) {
-        changeSubtitle.innerHTML = inputPosition.value;
-    } else {
-        changeSubtitle.innerHTML = defaultPosition;
-    }
-};
-const updatePhone = function () {
-    if (inputPhone.value !== isFilled) {
-        containerPhone.classList.remove('js-filter');
-        changePhone.href = 'tel:+' + inputPhone.value;
-    } else {
-        containerPhone.classList.add('js-filter');
-        changePhone.href = '';
-    }
+function checkCheck() {
+  if (formValidation.checkValidity() === true) {
+    createAllowCard.classList.remove('js-filter');
+  } else {
+    createAllowCard.classList.add('js-filter');
+  };
 };
 
-const updateEmail = function () {
-    if (inputEmail.value !== isFilled) {
-        containerEmail.classList.remove('js-filter');
-        changeEmail.href = `mailto:"${inputEmail.value}"`;
-    } else {
-        containerEmail.classList.add('js-filter');
-        changeEmail.href = '';
-    }
+function listenInputs() {
+  for (let i = 0; i < inputArr.length; i++) {
+    inputArr[i].addEventListener('keyup', handler);
+  }
 };
 
-const updateLinkedin = function () {
-    if (inputLinkedin.value !== isFilled) {
-        containerLinkedin.classList.remove('js-filter');
-        const profile = inputLinkedin.value;
-        changeLinkedin.href = 'https://www.' + profile;
+listenInputs();
+
+const defaultPreviewArr = [
+  'Nombre Apellido',
+  'Front-End Developer',
+  '',
+  '',
+  '',
+  '',
+]
+const hrefArr = [
+  false,
+  false,
+  'mailto:',
+  'tel:+',
+  'https://www.linkedin.com/in/',
+  'https://www.github.com/',
+]
+
+function updatePreview() {
+  for (let i = 0; i < inputArr.length; i++) {
+    if (i < 2) {
+      if (!!inputArr[i].value === false) {
+        previewArr[i].innerHTML = defaultPreviewArr[i];
+      } else {
+        previewArr[i].innerHTML = inputArr[i].value;
+      }
     } else {
-        containerLinkedin.classList.add('js-filter');
-        changeLinkedin.href = '';
+      if (!!inputArr[i].value === false) {
+        previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
+      } else {
+        previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
+      }
     }
+  };
 };
 
-const updateGithub = function () {
-    if (inputGithub.value !== isFilled) {
-        containerGithub.classList.remove('js-filter');
-        const profile = inputGithub.value.slice(1);
-        changeGithub.href = 'https://www.github.com/' + profile;
-    } else {
-        containerGithub.classList.add('js-filter');
-        changeGithub.href = '';
-    }
+function handler() {
+  // localstorage
+  updatePreview();
+  // updatePalette();
+  checkCheck();
 };
 
+// Image loading
+const fr = new FileReader();
+const uploadBtn = document.querySelector('.js-fill__image-btn');
+const fileField = document.querySelector('.js-fill__image-upload-btn');
+const profileImage = document.querySelector('.preview__display--img');
+const profilePreview = document.querySelector('.fill__image--miniature');
 
-inputName.addEventListener('keyup', updateName);
-inputPosition.addEventListener('keyup', updatePosition);
-inputEmail.addEventListener('keyup', updateEmail);
-inputGithub.addEventListener('keyup', updateGithub);
-inputPhone.addEventListener('keyup', updatePhone);
-inputLinkedin.addEventListener('keyup', updateLinkedin);
+
+function getImage(e) {
+  var myFile = e.currentTarget.files[0];
+  fr.addEventListener('load', writeImage);
+  fr.readAsDataURL(myFile);
+}
+/**
+ * Una vez tenemos los datos listos en el FR podemos
+ * trabajar con ellos ;)
+ */
+function writeImage() {
+  /* En la propiedad `result` de nuestro FR se almacena
+   * el resultado
+   */
+  profileImage.style.backgroundImage = `url(${fr.result})`;
+  profilePreview.style.backgroundImage = `url(${fr.result})`;
+}
+/**
+ * Genera un click automático en nuesto campo de tipo "file"
+ * que está oculto
+ */
+function fakeFileClick(e) {
+  e.preventDefault();
+  fileField.click();
+}
+/**
+ * Añadimos los listeners necesarios:
+ * - al botón visible para generar el click automático
+ * - al campo oculto para cuando cambie su value
+ */
+uploadBtn.addEventListener('click', fakeFileClick);
+fileField.addEventListener('change', getImage);

@@ -3,6 +3,7 @@
 // Color palette 1 //
 
 const selectPalette1 = document.getElementById("color1");
+
 function changeColor1() {
   let color = document.querySelector(".preview__display");
   color.classList.remove("palette2");
@@ -15,6 +16,7 @@ selectPalette1.addEventListener("click", changeColor1);
 /// Color palette 2 //
 
 const selectPalette2 = document.getElementById("color2");
+
 function changeColor2() {
   let color = document.querySelector(".preview__display");
   color.classList.remove("palette1");
@@ -27,6 +29,7 @@ selectPalette2.addEventListener("click", changeColor2);
 // Color palette 3 //
 
 const selectPalette3 = document.getElementById("color3");
+
 function changeColor3() {
   let color = document.querySelector(".preview__display");
   color.classList.remove("palette1");
@@ -35,3 +38,7 @@ function changeColor3() {
 }
 
 selectPalette3.addEventListener("click", changeColor3);
+
+function updatePalette() {
+
+}
