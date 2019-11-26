@@ -12,11 +12,12 @@ for (let i = 0; i < collapsibleArr.length; i++) {
 }
 
 function toggle(itemIndex) {
+  const sel = fieldsetArr[itemIndex];
+  const initialStatus = sel.classList.contains('hidden');
   fieldsetArr[0].classList.add('hidden');
   fieldsetArr[1].classList.add('hidden');
   fieldsetArr[2].classList.add('hidden');
-  const sel = fieldsetArr[itemIndex];
-  if (sel.classList.contains('hidden')) {
+  if (initialStatus) {
     sel.classList.remove('hidden');
     sel.classList.add('open');
   } else {
