@@ -1,7 +1,6 @@
 .landing {
-  display: flex;
+  @include center();
   flex-direction: column;
-  align-items: center;
   background-color: $backgroundLanding;
   //background-attachment: fixed;
   padding-top: 95px;
