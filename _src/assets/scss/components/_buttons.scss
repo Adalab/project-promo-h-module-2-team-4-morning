@@ -1,12 +1,11 @@
 .preview__reset {
   // limpiar todo lo que pone normal
+  @include buttons();
   width: 75px;
-  height: 30px;
   border-radius: 15px;
   border: solid 1px $colorButton;
   background-color: transparent;
   text-transform: uppercase;
-  font-family: $fontPrimary;
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
