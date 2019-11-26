@@ -123,7 +123,8 @@ function writeImage() {
  * Genera un click automático en nuesto campo de tipo "file"
  * que está oculto
  */
-function fakeFileClick() {
+function fakeFileClick(e) {
+  e.preventDefault();
   fileField.click();
 }
 
