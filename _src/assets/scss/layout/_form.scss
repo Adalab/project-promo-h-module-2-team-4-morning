@@ -48,6 +48,9 @@
       width: 30px;
       border: $placeholderBorder solid 1px;
       margin-left: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }
