@@ -7,10 +7,8 @@ const createAllowCard = document.querySelector('.js-share__btn');
 
 function show() {
   for (let i = 0; i < inputArr.length; i++) {
-
     inputArr[i].value;
     console.log(inputArr[i].value);
-
 
     function checkCheck() {
       if (formValidation.checkValidity() === true) {
