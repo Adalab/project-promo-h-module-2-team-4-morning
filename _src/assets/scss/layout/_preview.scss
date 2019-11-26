@@ -6,10 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
-  padding: 38px 35px 40px 45px;
-
-
+  // padding: 38px 35px 40px 45px;
+  min-height: 460px;
 
   @media all and (min-width: 768px) {
     order: 1;
@@ -38,6 +38,7 @@
   &__display {
     background-color: #fff;
     font-family: $fontCard;
+    box-shadow: 0 1px 10px grey, 0 1px 3px 0 rgba(0, 0, 0, 0.35);
 
     &--header {
       padding: 20px 0 10px;
