@@ -19,14 +19,14 @@ function show() {
     };
 
     function updatePreview() {
-      const defaultPreviewArr = [];
-      defaultPreviewArr[0] = 'Nombre Apellido';
-      defaultPreviewArr[1] = 'Front-End Developer';
-      defaultPreviewArr[2] = '';
-      defaultPreviewArr[3] = '';
-      defaultPreviewArr[4] = '';
-      defaultPreviewArr[5] = '';
-
+      const defaultPreviewArr = [
+        'Nombre Apellido',
+        'Front-End Developer',
+        '',
+        '',
+        '',
+        '',
+      ]
       const hrefArr = [];
       hrefArr[2] = 'mailto:';
       hrefArr[3] = 'tel:+';
@@ -34,13 +34,13 @@ function show() {
       hrefArr[5] = 'https://www.github.com/';
 
       if (i < 2) {
-        if (inputArr[i].value == false) {
+        if (!!inputArr[i].value === false) {
           previewArr[i].innerHTML = defaultPreviewArr[i];
         } else {
           previewArr[i].innerHTML = inputArr[i].value;
         }
       } else {
-        if (inputArr[i].value == false) {
+        if (!!inputArr[i].value === false) {
           previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
         } else {
           previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
