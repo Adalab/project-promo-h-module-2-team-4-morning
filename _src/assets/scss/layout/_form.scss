@@ -36,12 +36,14 @@
       width: 140px;
       background: $colorPrimary;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+
       &:hover {
         cursor: pointer;
       }
     }
 
     &--miniature {
+      display: none;
       height: 30px;
       width: 30px;
       border: $placeholderBorder solid 1px;
