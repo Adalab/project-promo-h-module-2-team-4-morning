@@ -20,8 +20,8 @@ function show() {
 
     function updatePreview() {
       const defaultPreviewArr = [];
-      defaultPreviewArr[0] = 'Nombre y Apellido';
-      defaultPreviewArr[1] = 'Front-End';
+      defaultPreviewArr[0] = 'Nombre Apellido';
+      defaultPreviewArr[1] = 'Front-End Developer';
       defaultPreviewArr[2] = '';
       defaultPreviewArr[3] = '';
       defaultPreviewArr[4] = '';
