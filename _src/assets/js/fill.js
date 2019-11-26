@@ -50,12 +50,12 @@ function updatePreview() {
     } else if (!!inputArr[i].value === false) {
       previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
       colorIConsCard[i - 2].classList.add('js-filter');
-    }
-    else {
+    } else {
       previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
       colorIConsCard[i - 2].classList.remove('js-filter');
     }
   }
+  twitterBtn.classList.add('hidden');
 }
 
 function handler() {
