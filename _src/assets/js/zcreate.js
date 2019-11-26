@@ -1,11 +1,13 @@
-const twitterBtn = document.querySelector(".twitter");
+'use strict';
+const twitterBtn = document.querySelector('.twitter');
 const twitterActive = function (event) {
   event.preventDefault(event);
   if (formValidation.checkValidity() === true) {
     twitterBtn.classList.remove('hidden');
-  } else {
+  }
+  else {
     twitterBtn.classList.add('hidden');
-  };
+  }
 };
 
 createAllowCard.addEventListener('click', twitterActive);
