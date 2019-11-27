@@ -17,6 +17,7 @@ function checkCheck() {
 function listenInputs() {
   for (let i = 0; i < inputArr.length; i++) {
     inputArr[i].addEventListener('keyup', handler);
+    localStorage.setItem('userData', JSON.stringify(inputArr));
   }
 }
 
@@ -40,6 +41,7 @@ const hrefArr = [
 ];
 
 function updatePreview() {
+  const lsArr = [];
   for (let i = 0; i < inputArr.length; i++) {
     if (i < 2) {
       if (!!inputArr[i].value === false) {
@@ -47,15 +49,31 @@ function updatePreview() {
       } else {
         previewArr[i].innerHTML = inputArr[i].value;
       }
-    } else if (!!inputArr[i].value === false) {
-      previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
-      colorIConsCard[i - 2].classList.add('filter');
     } else {
-      previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
-      colorIConsCard[i - 2].classList.remove('filter');
+      if (!!inputArr[i].value === false) {
+        previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
+        colorIConsCard[i - 2].classList.add('filter');
+      } else {
+        previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
+        colorIConsCard[i - 2].classList.remove('filter');
+      }
     }
+    lsArr.push(lsArr[i] = inputArr[i].value);
   }
   twitterBtn.classList.add('hidden');
+  localStorage.setItem('userData', JSON.stringify(lsArr));
+}
+
+function getFromLocalStorage() {
+  const userData = JSON.parse(localStorage.getItem('userData'));
+  if (userData !== null) {
+    // inputArr[0].value = userData.lsArr[0];
+    // inputArr[1].value = userData.lsArr[1];
+    // inputArr[2].value = userData.lsArr[2];
+    // inputArr[3].value = userData.lsArr[3];
+    // inputArr[4].value = userData.lsArr[4];
+    // inputArr[5].value = userData.lsArr[5];
+  }
 }
 
 function handler() {
@@ -64,7 +82,7 @@ function handler() {
   // updatePalette();
   checkCheck();
 }
-
+getFromLocalStorage();
 // Image loading
 const fr = new FileReader();
 const uploadBtn = document.querySelector('.js-fill__image-btn');
