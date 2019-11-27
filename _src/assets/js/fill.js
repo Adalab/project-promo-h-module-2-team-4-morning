@@ -8,9 +8,9 @@ const colorIConsCard = document.querySelectorAll('.menu__items');
 
 function checkCheck() {
   if (formValidation.checkValidity() === true) {
-    createAllowCard.classList.remove('js-filter');
+    createAllowCard.classList.remove('filter');
   } else {
-    createAllowCard.classList.add('js-filter');
+    createAllowCard.classList.add('filter');
   }
 }
 
@@ -49,10 +49,10 @@ function updatePreview() {
       }
     } else if (!!inputArr[i].value === false) {
       previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
-      colorIConsCard[i - 2].classList.add('js-filter');
+      colorIConsCard[i - 2].classList.add('filter');
     } else {
       previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
-      colorIConsCard[i - 2].classList.remove('js-filter');
+      colorIConsCard[i - 2].classList.remove('filter');
     }
   }
   twitterBtn.classList.add('hidden');
