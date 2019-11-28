@@ -53,4 +53,11 @@ function showURL(result) {
   } else {
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
+  shareTwitter(result.cardURL);
+}
+
+const btnTwitter = document.querySelector('.js-button-twitter');
+
+function shareTwitter(x) {
+  btnTwitter.href = `https://twitter.com/intent/tweet?text=Quiero%20compartir%20mi%20tarjeta%20profesional%20por%20Twitter.&url=${x}%20La%20he%20creado%20en%3A%20&url=https%3A%2F%2Fn9.cl%2F9vmf&hashtags=tarjetavisita,html,css,javascript,businesscard,card,profile`;
 }
