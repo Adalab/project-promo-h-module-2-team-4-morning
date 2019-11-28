@@ -1,3 +1,4 @@
+/* eslint-disable no-inner-declarations */
 'use strict';
 
 const collapsibleArr = document.querySelectorAll('.collapsible');

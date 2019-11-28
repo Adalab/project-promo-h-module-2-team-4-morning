@@ -2,9 +2,7 @@
   border-bottom: $bottomBorder solid 1px;
   margin-bottom: 30px;
   padding-top: 25px;
-  // overflow: hidden;
-  // opacity: 0;
-  // max-height: 0;
+
 
   &__btn {
     background-color: $colorPrimary;
@@ -15,7 +13,7 @@
     border-radius: 12px;
     font-family: $fontPrimary;
     font-size: 18px;
-    //font-weight: 600;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,9 +32,7 @@
   align-items: center;
   border-bottom: $bottomBorder solid 1px;
   padding-bottom: 30px;
-  // overflow: hidden;
-  // opacity: 0;
-  // max-height: 0;
+
 
   &__title {
     color: $colorSecondary;
@@ -63,12 +59,21 @@
     width: 181px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
     text-align: center;
+
     &--icon {
       font-size: 18px;
       margin: auto 9.5px auto 0px;
     }
+
+  }
+
+  &__link2 {
+    color: $colorButton;
+    font-family: $fontPrimary;
+    font-size: 14px;
   }
 }
+
 .filter {
   filter: grayscale(100%);
 }
