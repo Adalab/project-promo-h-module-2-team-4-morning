@@ -5,6 +5,43 @@ const previewArr = document.querySelectorAll('.js-preview');
 const formValidation = document.querySelector('.js-form-container');
 const createAllowCard = document.querySelector('.js-share__btn');
 const colorIConsCard = document.querySelectorAll('.menu__items');
+const colorInputArr = document.querySelectorAll('.js-input-color');
+const lsObj = {};
+const twitterBtn = document.querySelector('.twitter');
+
+function listenColors() {
+  for (let i = 0; i < colorInputArr.length; i++) {
+    colorInputArr[i].addEventListener('click', updatePalette);
+
+  }
+}
+
+listenColors();
+
+function updatePalette() {
+
+  for (let i = 0; i < colorInputArr.length; i++) {
+    let color = document.querySelector('.preview__display');
+    if (colorInputArr[0].checked === true) {
+      color.classList.remove('palette1');
+      color.classList.remove('palette2');
+      color.classList.add('palette0');
+      lsObj['palette'] = colorInputArr[0].id;
+    } else if (colorInputArr[1].checked === true) {
+      color.classList.remove('palette0');
+      color.classList.remove('palette2');
+      color.classList.add('palette1');
+      lsObj['palette'] = colorInputArr[1].id;
+    } else {
+      color.classList.remove('palette0');
+      color.classList.remove('palette1');
+      color.classList.add('palette2');
+      lsObj['palette'] = colorInputArr[2].id;
+    }
+
+  }
+  updateLocalStorage();
+}
 
 function checkCheck() {
   if (formValidation.checkValidity() === true) {
@@ -42,7 +79,7 @@ const hrefArr = [
 
 function updatePreview() {
   const lsArr = [];
-  const lsObj = {};
+
   for (let i = 0; i < inputArr.length; i++) {
     if (i < 2) {
       if (!!inputArr[i].value === false) {
@@ -60,33 +97,52 @@ function updatePreview() {
       }
     }
     lsObj[inputArr[i].id] = inputArr[i].value;
-
     lsArr.push(inputArr[i].value);
   }
   twitterBtn.classList.add('hidden');
+}
+
+function updateLocalStorage() {
   localStorage.setItem('userData', JSON.stringify(lsObj));
-  //lsObj[palette] = ;
 }
 
 function getFromLocalStorage() {
   const userData = JSON.parse(localStorage.getItem('userData'));
   if (userData !== null) {
-    // inputArr[0].value = userData.lsArr[0];
-    // inputArr[1].value = userData.lsArr[1];
-    // inputArr[2].value = userData.lsArr[2];
-    // inputArr[3].value = userData.lsArr[3];
-    // inputArr[4].value = userData.lsArr[4];
-    // inputArr[5].value = userData.lsArr[5];
+    inputArr[0].value = userData.name;
+    inputArr[1].value = userData.position;
+    inputArr[2].value = userData.email;
+    inputArr[3].value = userData.phone;
+    inputArr[4].value = userData.linkedin;
+    inputArr[5].value = userData.github;
+    for (let i = 0; i < colorInputArr.length; i++) {
+      if (colorInputArr[i].id === userData.palette) {
+        colorInputArr[i].setAttribute('checked', 'checked');
+        updatePalette();
+      }
+    }
   }
 }
 
+function updateObject() {
+  for (let i = 0; i < lsObj.length; i++) {
+    lsObj[inputArr[i].id] = '';
+    lsObj['palette'] = '';
+  }
+}
+updateObject();
+
 function handler() {
-  // localstorage
+  updateLocalStorage();
   updatePreview();
-  // updatePalette();
+  updatePalette();
   checkCheck();
+
 }
 getFromLocalStorage();
+
+
+
 // Image loading
 const fr = new FileReader();
 const uploadBtn = document.querySelector('.js-fill__image-btn');
@@ -110,6 +166,7 @@ function writeImage() {
    */
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
+  lsObj['image'] = fr.result;
 }
 /**
  * Genera un click automático en nuesto campo de tipo "file"
@@ -126,3 +183,19 @@ function fakeFileClick(e) {
  */
 uploadBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
+
+
+const twitterActive = function () {
+  if (formValidation.checkValidity() === true) {
+    twitterBtn.classList.remove('hidden');
+  } else {
+    twitterBtn.classList.add('hidden');
+  }
+};
+
+function createButtonHandler(event) {
+  event.preventDefault();
+  twitterActive();
+}
+
+createAllowCard.addEventListener('click', createButtonHandler);
