@@ -9,6 +9,91 @@ const colorInputArr = document.querySelectorAll('.js-input-color');
 const lsObj = {};
 const twitterBtn = document.querySelector('.twitter');
 
+// Image loading
+const fr = new FileReader();
+const uploadBtn = document.querySelector('.js-fill__image-btn');
+const fileField = document.querySelector('.js-fill__image-upload-btn');
+const profileImage = document.querySelector('.preview__display--img');
+const profilePreview = document.querySelector('.fill__image--miniature');
+
+let form = document.querySelector('form');
+const resetFormBtn = document.querySelector('.preview__reset');
+const defaultImage = './assets/images/profile.png';
+
+function resetForm() {
+  form.reset();
+  document.querySelector('.preview__display').classList.remove('palette1');
+  document.querySelector('.preview__display').classList.remove('palette2');
+  document.querySelector('.preview__display').classList.remove('palette3');
+  handler();
+
+  // twitterActive();
+  profileImage.style.backgroundImage = `url(${defaultImage})`;
+  profilePreview.style.backgroundImage = `url('')`;
+}
+
+resetFormBtn.addEventListener('click', resetForm);
+
+
+function getImage(e) {
+  var myFile = e.currentTarget.files[0];
+  fr.addEventListener('load', writeImage);
+  fr.readAsDataURL(myFile);
+
+
+}
+/**
+ * Una vez tenemos los datos listos en el FR podemos
+ * trabajar con ellos ;)
+ */
+function writeImage() {
+  /* En la propiedad `result` de nuestro FR se almacena
+   * el resultado
+   */
+
+  if (!!fr.result === true) {
+    profileImage.style.backgroundImage = `url(${fr.result})`;
+    profilePreview.style.backgroundImage = `url(${fr.result})`;
+    lsObj['image'] = fr.result;
+    updateLocalStorage();
+  } else {
+    profileImage.style.backgroundImage = `url(${defaultImage})`;
+    profilePreview.style.backgroundImage = `url('')`;
+    lsObj['image'] = fr.result;
+  }
+}
+/**
+ * Genera un click automático en nuesto campo de tipo "file"
+ * que está oculto
+ */
+function fakeFileClick(e) {
+  e.preventDefault();
+  fileField.click();
+}
+/**
+ * Añadimos los listeners necesarios:
+ * - al botón visible para generar el click automático
+ * - al campo oculto para cuando cambie su value
+ */
+uploadBtn.addEventListener('click', fakeFileClick);
+fileField.addEventListener('change', getImage);
+
+
+const twitterActive = function () {
+  if (formValidation.checkValidity() === true) {
+    twitterBtn.classList.remove('hidden');
+  } else {
+    twitterBtn.classList.add('hidden');
+  }
+};
+
+function createButtonHandler(event) {
+  event.preventDefault();
+  twitterActive();
+}
+
+createAllowCard.addEventListener('click', createButtonHandler);
+
 function listenColors() {
   for (let i = 0; i < colorInputArr.length; i++) {
     colorInputArr[i].addEventListener('click', updatePalette);
@@ -115,6 +200,10 @@ function getFromLocalStorage() {
     inputArr[3].value = userData.phone;
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
+    updatePreview();
+    profileImage.style.backgroundImage = `url(${userData.image})`;
+    profilePreview.style.backgroundImage = `url(${userData.image})`;
+    writeImage();
     for (let i = 0; i < colorInputArr.length; i++) {
       if (colorInputArr[i].id === userData.palette) {
         colorInputArr[i].setAttribute('checked', 'checked');
@@ -124,13 +213,13 @@ function getFromLocalStorage() {
   }
 }
 
-function updateObject() {
-  for (let i = 0; i < lsObj.length; i++) {
-    lsObj[inputArr[i].id] = '';
-    lsObj['palette'] = '';
-  }
-}
-updateObject();
+// function updateObject() {
+//   for (let i = 0; i < lsObj.length; i++) {
+//     lsObj[inputArr[i].id] = '';
+//     lsObj['palette'] = '';
+//   }
+// }
+// updateObject();
 
 function handler() {
   updateLocalStorage();
@@ -140,62 +229,3 @@ function handler() {
 
 }
 getFromLocalStorage();
-
-
-
-// Image loading
-const fr = new FileReader();
-const uploadBtn = document.querySelector('.js-fill__image-btn');
-const fileField = document.querySelector('.js-fill__image-upload-btn');
-const profileImage = document.querySelector('.preview__display--img');
-const profilePreview = document.querySelector('.fill__image--miniature');
-
-
-function getImage(e) {
-  var myFile = e.currentTarget.files[0];
-  fr.addEventListener('load', writeImage);
-  fr.readAsDataURL(myFile);
-}
-/**
- * Una vez tenemos los datos listos en el FR podemos
- * trabajar con ellos ;)
- */
-function writeImage() {
-  /* En la propiedad `result` de nuestro FR se almacena
-   * el resultado
-   */
-  profileImage.style.backgroundImage = `url(${fr.result})`;
-  profilePreview.style.backgroundImage = `url(${fr.result})`;
-  lsObj['image'] = fr.result;
-}
-/**
- * Genera un click automático en nuesto campo de tipo "file"
- * que está oculto
- */
-function fakeFileClick(e) {
-  e.preventDefault();
-  fileField.click();
-}
-/**
- * Añadimos los listeners necesarios:
- * - al botón visible para generar el click automático
- * - al campo oculto para cuando cambie su value
- */
-uploadBtn.addEventListener('click', fakeFileClick);
-fileField.addEventListener('change', getImage);
-
-
-const twitterActive = function () {
-  if (formValidation.checkValidity() === true) {
-    twitterBtn.classList.remove('hidden');
-  } else {
-    twitterBtn.classList.add('hidden');
-  }
-};
-
-function createButtonHandler(event) {
-  event.preventDefault();
-  twitterActive();
-}
-
-createAllowCard.addEventListener('click', createButtonHandler);
