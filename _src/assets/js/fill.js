@@ -137,6 +137,7 @@ function checkCheck() {
   }
 }
 
+
 function listenInputs() {
   for (let i = 0; i < inputArr.length; i++) {
     inputArr[i].addEventListener('keyup', handler);
@@ -211,6 +212,7 @@ function getFromLocalStorage() {
         updatePalette();
       }
     }
+    checkCheck();
   }
 }
 
