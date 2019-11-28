@@ -17,7 +17,7 @@ function checkCheck() {
 function listenInputs() {
   for (let i = 0; i < inputArr.length; i++) {
     inputArr[i].addEventListener('keyup', handler);
-    localStorage.setItem('userData', JSON.stringify(inputArr));
+
   }
 }
 
@@ -42,6 +42,7 @@ const hrefArr = [
 
 function updatePreview() {
   const lsArr = [];
+  const lsObj = {};
   for (let i = 0; i < inputArr.length; i++) {
     if (i < 2) {
       if (!!inputArr[i].value === false) {
@@ -58,10 +59,13 @@ function updatePreview() {
         colorIConsCard[i - 2].classList.remove('filter');
       }
     }
-    lsArr.push(lsArr[i] = inputArr[i].value);
+    lsObj[inputArr[i].id] = inputArr[i].value;
+
+    lsArr.push(inputArr[i].value);
   }
   twitterBtn.classList.add('hidden');
-  localStorage.setItem('userData', JSON.stringify(lsArr));
+  localStorage.setItem('userData', JSON.stringify(lsObj));
+  //lsObj[palette] = ;
 }
 
 function getFromLocalStorage() {
