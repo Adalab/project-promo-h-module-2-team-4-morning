@@ -195,7 +195,7 @@ function getFromLocalStorage() {
   const userData = JSON.parse(localStorage.getItem('userData'));
   if (userData !== null) {
     inputArr[0].value = userData.name;
-    inputArr[1].value = userData.position;
+    inputArr[1].value = userData.job;
     inputArr[2].value = userData.email;
     inputArr[3].value = userData.phone;
     inputArr[4].value = userData.linkedin;
