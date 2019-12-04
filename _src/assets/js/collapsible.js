@@ -17,8 +17,11 @@ function toggle(itemIndex) {
   const col = collapsibleArr[itemIndex];
   const initialStatus = sel.classList.contains('hidden');
   fieldsetArr[0].classList.add('hidden');
+  collapsibleArr[0].classList.remove('open');
   fieldsetArr[1].classList.add('hidden');
+  collapsibleArr[1].classList.remove('open');
   fieldsetArr[2].classList.add('hidden');
+  collapsibleArr[2].classList.remove('open');
   if (initialStatus) {
     sel.classList.remove('hidden');
     col.classList.add('open');
