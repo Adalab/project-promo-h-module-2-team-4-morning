@@ -129,7 +129,7 @@ function updatePalette() {
   updateLocalStorage();
 }
 
-function checkCheck() {
+function checkForm() {
   if (formValidation.checkValidity() === true) {
     createAllowCard.classList.remove('filter');
   } else {
@@ -202,17 +202,16 @@ function getFromLocalStorage() {
     inputArr[3].value = userData.phone;
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
-    updatePreview();
     profileImage.style.backgroundImage = `url(${userData.image})`;
     profilePreview.style.backgroundImage = `url(${userData.image})`;
-    writeImage();
+    updatePreview();
     for (let i = 0; i < colorInputArr.length; i++) {
       if (colorInputArr[i].id === userData.palette) {
         colorInputArr[i].setAttribute('checked', 'checked');
         updatePalette();
       }
     }
-    checkCheck();
+    checkForm();
   }
 }
 
@@ -289,7 +288,7 @@ function handler() {
   updateLocalStorage();
   updatePreview();
   updatePalette();
-  checkCheck();
+  checkForm();
 
 }
 getFromLocalStorage();
