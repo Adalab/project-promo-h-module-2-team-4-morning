@@ -107,6 +107,7 @@ listenColors();
 function updatePalette() {
 
   for (let i = 0; i < colorInputArr.length; i++) {
+
     let color = document.querySelector('.preview__display');
     if (colorInputArr[0].checked === true) {
       color.classList.remove('palette1');
