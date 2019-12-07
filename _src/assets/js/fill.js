@@ -6,7 +6,16 @@ const formValidation = document.querySelector('.js-form-container');
 const createAllowCard = document.querySelector('.js-share__btn');
 const colorIConsCard = document.querySelectorAll('.menu__items');
 const colorInputArr = document.querySelectorAll('.js-input-color');
-const lsObj = {};
+const lsObj = {
+  palette: "",
+  name: "",
+  job: "",
+  image: "",
+  email: "",
+  phone: "",
+  linkedin: "",
+  github: "",
+};
 const twitterBtn = document.querySelector('.twitter');
 const responseURL = document.querySelector('.js-response');
 
@@ -244,12 +253,12 @@ function getJSONFromInputs(inputs) {
 
 function sendRequest(json) {
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
-      body: JSON.stringify(json),
-      headers: {
-        'content-type': 'application/json'
-      },
-    })
+    method: 'POST',
+    body: JSON.stringify(json),
+    headers: {
+      'content-type': 'application/json'
+    },
+  })
     .then(function (resp) {
       return resp.json();
     })
