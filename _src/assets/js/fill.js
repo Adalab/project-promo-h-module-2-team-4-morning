@@ -212,6 +212,7 @@ function getFromLocalStorage() {
     inputArr[3].value = userData.phone;
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
+    lsObj.image = userData.image;
     profileImage.style.backgroundImage = `url(${userData.image})`;
     profilePreview.style.backgroundImage = `url(${userData.image})`;
     updatePreview();
