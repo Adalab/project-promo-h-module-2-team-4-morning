@@ -19,7 +19,7 @@ const profilePreview = document.querySelector('.fill__image--miniature');
 
 let form = document.querySelector('form');
 const resetFormBtn = document.querySelector('.preview__reset');
-const defaultImage = './assets/images/profile.png';
+const defaultImage = './assets/images/default-profile.png';
 
 function resetForm() {
   colorInputArr[1].removeAttribute("checked");
