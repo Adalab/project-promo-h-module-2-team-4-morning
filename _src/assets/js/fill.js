@@ -216,8 +216,10 @@ function getFromLocalStorage() {
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
     lsObj.image = userData.image;
-    profileImage.style.backgroundImage = `url(${userData.image})`;
-    profilePreview.style.backgroundImage = `url(${userData.image})`;
+    if (userData.image !== "") {
+      profileImage.style.backgroundImage = `url(${userData.image})`;
+      profilePreview.style.backgroundImage = `url(${userData.image})`;
+    }
     updatePreview();
     for (let i = 0; i < colorInputArr.length; i++) {
       if (colorInputArr[i].id === userData.palette) {
