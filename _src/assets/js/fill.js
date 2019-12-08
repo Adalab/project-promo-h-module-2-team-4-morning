@@ -233,15 +233,14 @@ function getFromLocalStorage() {
   }
 }
 
-
 createAllowCard.addEventListener('click', loadPhoto);
 
 function sendData() {
-
   let inputs = Array.from(formValidation.elements);
   let json = getJSONFromInputs(inputs);
   json.skills = ['JavaScript', 'React'];
   json.photo = fr.result;
+  json.palette = lsObj.palette;
   sendRequest(json);
 }
 
