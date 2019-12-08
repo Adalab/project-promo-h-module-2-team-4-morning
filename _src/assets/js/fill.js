@@ -31,12 +31,14 @@ const resetFormBtn = document.querySelector('.preview__reset');
 const defaultImage = './assets/images/default-profile.png';
 
 function resetForm() {
+
   colorInputArr[1].removeAttribute("checked");
   colorInputArr[2].removeAttribute("checked");
   form.reset();
   document.querySelector('.preview__display').classList.remove('palette1');
   document.querySelector('.preview__display').classList.remove('palette2');
   document.querySelector('.preview__display').classList.remove('palette3');
+  lsObj.image = "";
 
   handler();
 
@@ -215,8 +217,11 @@ function getFromLocalStorage() {
     inputArr[3].value = userData.phone;
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
-    profileImage.style.backgroundImage = `url(${userData.image})`;
-    profilePreview.style.backgroundImage = `url(${userData.image})`;
+    lsObj.image = userData.image;
+    if (userData.image !== "") {
+      profileImage.style.backgroundImage = `url(${userData.image})`;
+      profilePreview.style.backgroundImage = `url(${userData.image})`;
+    }
     updatePreview();
     for (let i = 0; i < colorInputArr.length; i++) {
       if (colorInputArr[i].id === userData.palette) {
