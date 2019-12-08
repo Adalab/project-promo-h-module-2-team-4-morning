@@ -239,15 +239,25 @@ function sendData() {
   let inputs = Array.from(formValidation.elements);
   let json = getJSONFromInputs(inputs);
   json.skills = ['JavaScript', 'React'];
-  json.photo = fr.result;
+  if (fr.result !== null) {
+    json.photo = fr.result;
+  } else {
+    json.photo = lsObj.image;
+  }
+
   json.palette = lsObj.palette;
   sendRequest(json);
 }
 
 function loadPhoto() {
   const myFile = document.querySelector('#img-selector').files[0];
-  fr.addEventListener('load', sendData);
-  fr.readAsDataURL(myFile);
+  if (myFile !== undefined) {
+    fr.addEventListener('load', sendData);
+    fr.readAsDataURL(myFile);
+  }
+  else {
+    sendData();
+  }
 }
 
 function getJSONFromInputs(inputs) {
