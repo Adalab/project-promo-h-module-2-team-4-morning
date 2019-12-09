@@ -7,14 +7,14 @@ const createAllowCard = document.querySelector('.js-share__btn');
 const colorIConsCard = document.querySelectorAll('.menu__items');
 const colorInputArr = document.querySelectorAll('.js-input-color');
 const lsObj = {
-  palette: "",
-  name: "",
-  job: "",
-  image: "",
-  email: "",
-  phone: "",
-  linkedin: "",
-  github: "",
+  palette: '',
+  name: '',
+  job: '',
+  image: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
 };
 const twitterBtn = document.querySelector('.twitter');
 const responseURL = document.querySelector('.js-response');
@@ -184,14 +184,12 @@ function updatePreview() {
       } else {
         previewArr[i].innerHTML = inputArr[i].value;
       }
+    } else if (!!inputArr[i].value === false) {
+      previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
+      colorIConsCard[i - 2].classList.add('filter');
     } else {
-      if (!!inputArr[i].value === false) {
-        previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
-        colorIConsCard[i - 2].classList.add('filter');
-      } else {
-        previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
-        colorIConsCard[i - 2].classList.remove('filter');
-      }
+      previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
+      colorIConsCard[i - 2].classList.remove('filter');
     }
     lsObj[inputArr[i].id] = inputArr[i].value;
     lsArr.push(inputArr[i].value);
@@ -245,8 +243,7 @@ function loadPhoto() {
 
 function getJSONFromInputs(inputs) {
   return inputs.reduce(function (acc, val) {
-    if (val.nodeName !== 'BUTTON')
-      acc[val.name] = val.value;
+    if (val.nodeName !== 'BUTTON') { acc[val.name] = val.value; }
     return acc;
   }, {});
 }
@@ -271,19 +268,20 @@ function sendRequest(json) {
 }
 
 function showURL(result) {
+  const btnTwitter = document.querySelector('.js-button-twitter');
   if (result.success) {
+    btnTwitter.href = `https://twitter.com/intent/tweet?text=Quiero%20compartir%20mi%20tarjeta%20profesional%20por%20Twitter.%20La%20he%20creado%20en%3A%20&url=https%3A%2F%2Fn9.cl%2F9vmf%20&hashtags=tarjetavisita,html,css,javascript,businesscard,card,profile&url=${responseURL}`;
     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
   } else {
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
-  shareTwitter(result.cardURL);
+  //shareTwitter(result.cardURL);
 }
 
-const btnTwitter = document.querySelector('.js-button-twitter');
 
-function shareTwitter(x) {
-  btnTwitter.href = `https://twitter.com/intent/tweet?text=Quiero%20compartir%20mi%20tarjeta%20profesional%20por%20Twitter.&url=${x}%20La%20he%20creado%20en%3A%20&url=https%3A%2F%2Fn9.cl%2F9vmf&hashtags=tarjetavisita,html,css,javascript,businesscard,card,profile`;
-}
+// function shareTwitter(x) {
+
+// }
 
 
 // function updateObject() {
