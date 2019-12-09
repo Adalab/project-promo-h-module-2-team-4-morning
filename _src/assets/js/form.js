@@ -25,13 +25,11 @@ const uploadBtn = document.querySelector('.js-fill__image-btn');
 const fileField = document.querySelector('.js-fill__image-upload-btn');
 const profileImage = document.querySelector('.preview__display--img');
 const profilePreview = document.querySelector('.fill__image--miniature');
-
 let form = document.querySelector('form');
 const resetFormBtn = document.querySelector('.preview__reset');
 const defaultImage = './assets/images/default-profile.png';
 
 function resetForm() {
-
   colorInputArr[1].removeAttribute('checked');
   colorInputArr[2].removeAttribute('checked');
   form.reset();
@@ -39,33 +37,19 @@ function resetForm() {
   document.querySelector('.preview__display').classList.remove('palette2');
   document.querySelector('.preview__display').classList.remove('palette3');
   lsObj.image = '';
-
   handler();
-
-  // twitterActive();
   profileImage.style.backgroundImage = `url(${defaultImage})`;
   profilePreview.style.backgroundImage = `url('')`;
 }
-
 resetFormBtn.addEventListener('click', resetForm);
-
 
 function getImage(e) {
   var myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
-
-
 }
-/**
- * Una vez tenemos los datos listos en el FR podemos
- * trabajar con ellos ;)
- */
-function writeImage() {
-  /* En la propiedad `result` de nuestro FR se almacena
-   * el resultado
-   */
 
+function writeImage() {
   if (!!fr.result === true) {
     profileImage.style.backgroundImage = `url(${fr.result})`;
     profilePreview.style.backgroundImage = `url(${fr.result})`;
@@ -77,27 +61,15 @@ function writeImage() {
     lsObj['image'] = fr.result;
   }
 }
-/**
- * Genera un click automático en nuesto campo de tipo "file"
- * que está oculto
- */
+
 function fakeFileClick(e) {
   e.preventDefault();
   fileField.click();
 }
-/**
- * Añadimos los listeners necesarios:
- * - al botón visible para generar el click automático
- * - al campo oculto para cuando cambie su value
- */
 uploadBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
-
-
 const twitterActive = function () {
-  if (formValidation.checkValidity() === true) {
-    twitterBtn.classList.remove('hidden');
-  } else {
+  if (formValidation.checkValidity() === false) {
     twitterBtn.classList.add('hidden');
   }
 };
@@ -106,7 +78,6 @@ function createButtonHandler(event) {
   event.preventDefault();
   twitterActive();
 }
-
 createAllowCard.addEventListener('click', createButtonHandler);
 
 function listenColors() {
@@ -115,13 +86,9 @@ function listenColors() {
 
   }
 }
-
 listenColors();
 
 function updatePalette() {
-
-  // for (let i = 0; i < colorInputArr.length; i++) {  //**ESTE BUCLE NO HACE NADA, YA LE DAMOS LA POSICIÓN NOSOTRAS**/
-
   let color = document.querySelector('.preview__display');
   if (colorInputArr[0].checked === true) {
     color.classList.remove('palette1');
@@ -139,8 +106,6 @@ function updatePalette() {
     color.classList.add('palette2');
     lsObj['palette'] = colorInputArr[2].id;
   }
-
-  // }
   updateLocalStorage();
 }
 
@@ -152,16 +117,13 @@ function checkForm() {
   }
 }
 
-
 function listenInputs() {
   for (let i = 0; i < inputArr.length; i++) {
     inputArr[i].addEventListener('keyup', handler);
 
   }
 }
-
 listenInputs();
-
 const defaultPreviewArr = [
   'Nombre Apellido',
   'Front-End Developer',
@@ -181,7 +143,6 @@ const hrefArr = [
 
 function updatePreview() {
   const lsArr = [];
-
   for (let i = 0; i < inputArr.length; i++) {
     if (i < 2) {
       if (!!inputArr[i].value === false) {
@@ -230,7 +191,6 @@ function getFromLocalStorage() {
     checkForm();
   }
 }
-
 createAllowCard.addEventListener('click', loadPhoto);
 
 function sendData() {
@@ -242,7 +202,6 @@ function sendData() {
   } else {
     json.photo = lsObj.image;
   }
-
   json.palette = lsObj.palette;
   sendRequest(json);
 }
@@ -252,27 +211,28 @@ function loadPhoto() {
   if (myFile !== undefined) {
     fr.addEventListener('load', sendData);
     fr.readAsDataURL(myFile);
-  }
-  else {
+  } else {
     sendData();
   }
 }
 
 function getJSONFromInputs(inputs) {
   return inputs.reduce(function (acc, val) {
-    if (val.nodeName !== 'BUTTON') { acc[val.name] = val.value; }
+    if (val.nodeName !== 'BUTTON') {
+      acc[val.name] = val.value;
+    }
     return acc;
   }, {});
 }
 
 function sendRequest(json) {
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-    method: 'POST',
-    body: JSON.stringify(json),
-    headers: {
-      'content-type': 'application/json'
-    },
-  })
+      method: 'POST',
+      body: JSON.stringify(json),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
     .then(function (resp) {
       return resp.json();
     })
@@ -285,37 +245,20 @@ function sendRequest(json) {
 }
 
 function showURL(result) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   const btnTwitter = document.querySelector('.js-button-twitter');
   if (result.success) {
     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
     btnTwitter.href = 'https://twitter.com/share?text=' + 'Quiero enseñar mi tarjeta de contacto' + '&url=' + result.cardURL + '&hashtags=' + 'tarjetavisita,html,css,javascript,businesscard,card,profile';
+    twitterBtn.classList.remove('hidden');
   } else {
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
-  //shareTwitter(result.cardURL);
 }
-
-
-// function shareTwitter(x) {
-
-// }
-
-
-// function updateObject() {
-//   for (let i = 0; i < lsObj.length; i++) {
-//     lsObj[inputArr[i].id] = '';
-//     lsObj['palette'] = '';
-//   }
-// }
-// updateObject();
 
 function handler() {
   updateLocalStorage();
   updatePreview();
   updatePalette();
   checkForm();
-
 }
 getFromLocalStorage();
