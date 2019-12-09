@@ -7,14 +7,14 @@ const createAllowCard = document.querySelector('.js-share__btn');
 const colorIConsCard = document.querySelectorAll('.menu__items');
 const colorInputArr = document.querySelectorAll('.js-input-color');
 const lsObj = {
-  palette: "",
-  name: "",
-  job: "",
-  image: "",
-  email: "",
-  phone: "",
-  linkedin: "",
-  github: "",
+  palette: '',
+  name: '',
+  job: '',
+  image: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
 };
 const twitterBtn = document.querySelector('.twitter');
 const responseURL = document.querySelector('.js-response');
@@ -32,13 +32,13 @@ const defaultImage = './assets/images/default-profile.png';
 
 function resetForm() {
 
-  colorInputArr[1].removeAttribute("checked");
-  colorInputArr[2].removeAttribute("checked");
+  colorInputArr[1].removeAttribute('checked');
+  colorInputArr[2].removeAttribute('checked');
   form.reset();
   document.querySelector('.preview__display').classList.remove('palette1');
   document.querySelector('.preview__display').classList.remove('palette2');
   document.querySelector('.preview__display').classList.remove('palette3');
-  lsObj.image = "";
+  lsObj.image = '';
 
   handler();
 
@@ -189,14 +189,12 @@ function updatePreview() {
       } else {
         previewArr[i].innerHTML = inputArr[i].value;
       }
+    } else if (!!inputArr[i].value === false) {
+      previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
+      colorIConsCard[i - 2].classList.add('filter');
     } else {
-      if (!!inputArr[i].value === false) {
-        previewArr[i].href = `${hrefArr[i]}${defaultPreviewArr[i]}`;
-        colorIConsCard[i - 2].classList.add('filter');
-      } else {
-        previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
-        colorIConsCard[i - 2].classList.remove('filter');
-      }
+      previewArr[i].href = `${hrefArr[i]}${inputArr[i].value}`;
+      colorIConsCard[i - 2].classList.remove('filter');
     }
     lsObj[inputArr[i].id] = inputArr[i].value;
     lsArr.push(inputArr[i].value);
@@ -218,7 +216,7 @@ function getFromLocalStorage() {
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
     lsObj.image = userData.image;
-    if (userData.image !== "") {
+    if (userData.image !== '') {
       profileImage.style.backgroundImage = `url(${userData.image})`;
       profilePreview.style.backgroundImage = `url(${userData.image})`;
     }
@@ -262,8 +260,7 @@ function loadPhoto() {
 
 function getJSONFromInputs(inputs) {
   return inputs.reduce(function (acc, val) {
-    if (val.nodeName !== 'BUTTON')
-      acc[val.name] = val.value;
+    if (val.nodeName !== 'BUTTON') { acc[val.name] = val.value; }
     return acc;
   }, {});
 }
@@ -288,19 +285,22 @@ function sendRequest(json) {
 }
 
 function showURL(result) {
+  // eslint-disable-next-line no-debugger
+  debugger;
+  const btnTwitter = document.querySelector('.js-button-twitter');
   if (result.success) {
     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    btnTwitter.href = 'https://twitter.com/share?text=' + 'Quiero enseñar mi tarjeta de contacto' + '&url=' + result.cardURL + '&hashtags=' + 'tarjetavisita,html,css,javascript,businesscard,card,profile';
   } else {
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
-  shareTwitter(result.cardURL);
+  //shareTwitter(result.cardURL);
 }
 
-const btnTwitter = document.querySelector('.js-button-twitter');
 
-function shareTwitter(x) {
-  btnTwitter.href = `https://twitter.com/intent/tweet?text=Quiero%20compartir%20mi%20tarjeta%20profesional%20por%20Twitter.&url=${x}%20La%20he%20creado%20en%3A%20&url=https%3A%2F%2Fn9.cl%2F9vmf&hashtags=tarjetavisita,html,css,javascript,businesscard,card,profile`;
-}
+// function shareTwitter(x) {
+
+// }
 
 
 // function updateObject() {
