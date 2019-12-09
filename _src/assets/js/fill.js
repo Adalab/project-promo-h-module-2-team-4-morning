@@ -28,13 +28,18 @@ const profilePreview = document.querySelector('.fill__image--miniature');
 
 let form = document.querySelector('form');
 const resetFormBtn = document.querySelector('.preview__reset');
-const defaultImage = './assets/images/profile.png';
+const defaultImage = './assets/images/default-profile.png';
 
 function resetForm() {
+
+  colorInputArr[1].removeAttribute('checked');
+  colorInputArr[2].removeAttribute('checked');
   form.reset();
   document.querySelector('.preview__display').classList.remove('palette1');
   document.querySelector('.preview__display').classList.remove('palette2');
   document.querySelector('.preview__display').classList.remove('palette3');
+  lsObj.image = '';
+
   handler();
 
   // twitterActive();
@@ -115,27 +120,27 @@ listenColors();
 
 function updatePalette() {
 
-  for (let i = 0; i < colorInputArr.length; i++) {
+  // for (let i = 0; i < colorInputArr.length; i++) {  //**ESTE BUCLE NO HACE NADA, YA LE DAMOS LA POSICIÓN NOSOTRAS**/
 
-    let color = document.querySelector('.preview__display');
-    if (colorInputArr[0].checked === true) {
-      color.classList.remove('palette1');
-      color.classList.remove('palette2');
-      color.classList.add('palette0');
-      lsObj['palette'] = colorInputArr[0].id;
-    } else if (colorInputArr[1].checked === true) {
-      color.classList.remove('palette0');
-      color.classList.remove('palette2');
-      color.classList.add('palette1');
-      lsObj['palette'] = colorInputArr[1].id;
-    } else {
-      color.classList.remove('palette0');
-      color.classList.remove('palette1');
-      color.classList.add('palette2');
-      lsObj['palette'] = colorInputArr[2].id;
-    }
-
+  let color = document.querySelector('.preview__display');
+  if (colorInputArr[0].checked === true) {
+    color.classList.remove('palette1');
+    color.classList.remove('palette2');
+    color.classList.add('palette0');
+    lsObj['palette'] = colorInputArr[0].id;
+  } else if (colorInputArr[1].checked === true) {
+    color.classList.remove('palette0');
+    color.classList.remove('palette2');
+    color.classList.add('palette1');
+    lsObj['palette'] = colorInputArr[1].id;
+  } else {
+    color.classList.remove('palette0');
+    color.classList.remove('palette1');
+    color.classList.add('palette2');
+    lsObj['palette'] = colorInputArr[2].id;
   }
+
+  // }
   updateLocalStorage();
 }
 
@@ -210,8 +215,11 @@ function getFromLocalStorage() {
     inputArr[3].value = userData.phone;
     inputArr[4].value = userData.linkedin;
     inputArr[5].value = userData.github;
-    profileImage.style.backgroundImage = `url(${userData.image})`;
-    profilePreview.style.backgroundImage = `url(${userData.image})`;
+    lsObj.image = userData.image;
+    if (userData.image !== '') {
+      profileImage.style.backgroundImage = `url(${userData.image})`;
+      profilePreview.style.backgroundImage = `url(${userData.image})`;
+    }
     updatePreview();
     for (let i = 0; i < colorInputArr.length; i++) {
       if (colorInputArr[i].id === userData.palette) {
@@ -223,22 +231,31 @@ function getFromLocalStorage() {
   }
 }
 
-
 createAllowCard.addEventListener('click', loadPhoto);
 
 function sendData() {
-
   let inputs = Array.from(formValidation.elements);
   let json = getJSONFromInputs(inputs);
   json.skills = ['JavaScript', 'React'];
-  json.photo = fr.result;
+  if (fr.result !== null) {
+    json.photo = fr.result;
+  } else {
+    json.photo = lsObj.image;
+  }
+
+  json.palette = lsObj.palette;
   sendRequest(json);
 }
 
 function loadPhoto() {
   const myFile = document.querySelector('#img-selector').files[0];
-  fr.addEventListener('load', sendData);
-  fr.readAsDataURL(myFile);
+  if (myFile !== undefined) {
+    fr.addEventListener('load', sendData);
+    fr.readAsDataURL(myFile);
+  }
+  else {
+    sendData();
+  }
 }
 
 function getJSONFromInputs(inputs) {
@@ -268,10 +285,12 @@ function sendRequest(json) {
 }
 
 function showURL(result) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   const btnTwitter = document.querySelector('.js-button-twitter');
   if (result.success) {
-    btnTwitter.href = `https://twitter.com/intent/tweet?text=Quiero%20compartir%20mi%20tarjeta%20profesional%20por%20Twitter.%20La%20he%20creado%20en%3A%20&url=https%3A%2F%2Fn9.cl%2F9vmf%20&hashtags=tarjetavisita,html,css,javascript,businesscard,card,profile&url=${responseURL}`;
     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    btnTwitter.href = 'https://twitter.com/share?text=' + 'Quiero enseñar mi tarjeta de contacto' + '&url=' + result.cardURL + '&hashtags=' + 'tarjetavisita,html,css,javascript,businesscard,card,profile';
   } else {
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
